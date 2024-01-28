@@ -103,7 +103,8 @@ Login to your GitHub account. Clone this repository to your desired folder:
 > cd my-folder
 
 Setup database:
-> sudo -u postgres createuser --interactive --pwprompt
+> sudo -u postgres createuser --interactive --pwprompt your_username
+> sudo -u postgres createdb -O your_username your_database
 (provide the username and password described in [config/database.yml](./config/database.yml))
 
 ### Install
@@ -154,7 +155,7 @@ Open [http://localhost:1080](http://localhost:1080) to view it in your browser.
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Zilola Nazarova**
+👤 **Yesuf Fenta**
 
 - GitHub: [@yusufyusie](https://github.com/yusufyusie)
 - LinkedIn: [in/yusufyusie](https://www.linkedin.com/in/yusufyusie)
