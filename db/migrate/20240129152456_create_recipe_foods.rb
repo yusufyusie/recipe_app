@@ -8,7 +8,7 @@ class CreateRecipeFoods < ActiveRecord::Migration[7.1]
       t.timestamps
     end
 
-    # add_index :recipe_foods, :recipe_id
-    # add_index :recipe_foods, :food_id
+    add_index :recipe_foods, :recipe_id
+    add_index :recipe_foods, :food_id
   end
 end
