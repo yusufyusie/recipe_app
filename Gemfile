@@ -8,6 +8,8 @@ gem 'sassc-rails'
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'bcrypt', '~> 3.1.7'
+gem 'webpacker', '~> 5.0'
+gem 'jsbundling-rails'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 

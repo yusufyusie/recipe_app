@@ -8,11 +8,16 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 # db/seeds.rb
-user1 = User.create!(name: 'User 1', email: 'user1@example.com', password: 'password1')
-user1.confirm
+# db/seeds.rb
 
-user2 = User.create!(name: 'User 2', email: 'user2@example.com', password: 'password2')
-user2.confirm
+User.find_or_create_by!(name: 'User 1', email: 'user1@example.com') do |user|
+  user.password = 'password1'
+end
 
-user3 = User.create!(name: 'User 3', email: 'user3@example.com', password: 'password3')
-user3.confirm
+User.find_or_create_by!(name: 'User 2', email: 'user2@example.com') do |user|
+  user.password = 'password2'
+end
+
+User.find_or_create_by!(name: 'User 3', email: 'user3@example.com') do |user|
+  user.password = 'password3'
+end
