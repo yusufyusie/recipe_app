@@ -69,6 +69,27 @@ form {
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 1em;
+    margin-bottom: 1em;
+
+    &:focus {
+      border-color: #007BFF;
+      outline: none;
+    }
+  }
+
+  .field_with_errors {
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      border-color: #dc3545;
+    }
+  }
+
+  .error-message {
+    color: #dc3545;
+    font-size: 0.875em;
+    margin-top: -0.75em;
+    margin-bottom: 1em;
   }
 
   input[type="submit"] {
