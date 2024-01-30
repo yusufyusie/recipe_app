@@ -1,15 +1,35 @@
+// Define color variables
+$primary-color: #007BFF;
+$secondary-color: #0056b3;
+$error-color: #dc3545;
+$light-color: #f4f4f4;
+$dark-color: #333;
+$border-color: #ddd;
+
+// Define mixin for transition
+@mixin transition($property) {
+  transition: $property 0.3s ease;
+}
+
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: $light-color;
+  color: $dark-color;
   line-height: 1.6;
 }
 
-h1 {
+h1, h2 {
   text-align: center;
-  color: #333;
-  font-size: 2em;
+  color: $dark-color;
   margin-top: 2em;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
 }
 
 p {
@@ -27,18 +47,17 @@ p {
     margin: 0 1em;
     padding: 0.5em 1em;
     color: #fff;
-    background-color: #007BFF;
+    background-color: $primary-color;
     border-radius: 5px;
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    @include transition(background-color);
 
     &:hover {
-      background-color: #0056b3;
+      background-color: $secondary-color;
     }
   }
 }
 
-/* Styles for the sign up form */
 form {
   max-width: 500px;
   margin: 0 auto;
@@ -47,17 +66,10 @@ form {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
-  h2 {
-    text-align: center;
-    color: #333;
-    font-size: 1.5em;
-    margin-bottom: 1em;
-  }
-
   label {
     display: block;
     margin-bottom: 0.5em;
-    color: #333;
+    color: $dark-color;
     font-weight: bold;
   }
 
@@ -66,13 +78,13 @@ form {
   input[type="password"] {
     width: 100%;
     padding: 0.5em;
-    border: 1px solid #ddd;
+    border: 1px solid $border-color;
     border-radius: 5px;
     font-size: 1em;
     margin-bottom: 1em;
 
     &:focus {
-      border-color: #007BFF;
+      border-color: $primary-color;
       outline: none;
     }
   }
@@ -81,12 +93,12 @@ form {
     input[type="text"],
     input[type="email"],
     input[type="password"] {
-      border-color: #dc3545;
+      border-color: $error-color;
     }
   }
 
   .error-message {
-    color: #dc3545;
+    color: $error-color;
     font-size: 0.875em;
     margin-top: -0.75em;
     margin-bottom: 1em;
@@ -96,14 +108,14 @@ form {
     margin-top: 1em;
     padding: 0.5em 1em;
     color: #fff;
-    background-color: #007BFF;
+    background-color: $primary-color;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    @include transition(background-color);
 
     &:hover {
-      background-color: #0056b3;
+      background-color: $secondary-color;
     }
   }
 
@@ -112,7 +124,7 @@ form {
     margin-top: 1em;
 
     a {
-      color: #007BFF;
+      color: $primary-color;
       text-decoration: none;
 
       &:hover {
