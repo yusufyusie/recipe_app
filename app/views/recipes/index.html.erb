@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>My Recipes</h1>
+  <% @recipes.each do |recipe| %>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><%= link_to recipe.title, recipe %></h5>
+        <p class="card-text"><%= recipe.description %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
