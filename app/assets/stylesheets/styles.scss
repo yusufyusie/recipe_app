@@ -1,21 +1,20 @@
 $primary-color: #007BFF;
 $secondary-color: #0056b3;
 $error-color: #dc3545;
-$light-color: #f8f9fa; // Softer light color
+$light-color: #f8f9fa; 
 $dark-color: #333;
 $border-color: #ddd;
 $alt-color: #6c757d;
 
-// Define mixin for transition
 @mixin transition($property) {
   transition: $property 0.3s ease;
 }
 
 body {
-  font-family: 'Roboto', sans-serif; // Modern sans-serif font
+  font-family: 'Roboto', sans-serif; 
   background-color: $light-color;
   color: $dark-color;
-  line-height: 1.7; // Increased line-height
+  line-height: 1.7; 
 }
 
 h1, h2 {
@@ -60,37 +59,35 @@ p {
 
 .auth-link-alt {
   display: block;
-  color: $primary-color; // Change color to primary color
+  color: $primary-color; 
   text-decoration: none;
-  margin: 0.1em auto; // Reduced margin
-  padding: 0.1em;
+  margin: 0.1em auto; 
   text-align: center;
-  font-size: 1.3em; // Increase font size
-  box-shadow: none; // Remove box-shadow
-  border-radius: 5px;
+  font-size: 1.3em; 
+  box-shadow: none;
   @include transition(all);
 
   &:hover {
-    text-decoration: underline; // Add underline on hover
+    text-decoration: underline; 
     color: darken($primary-color, 10%);
   }
 }
 
 .auth-button-alt {
   display: block;
-  margin: 0.1em auto; // Reduced margin
+  margin: 0.1em auto; 
   padding: 0.1em 1em;
-  color: $primary-color; // Change color to primary color
+  color: $primary-color; 
   border: none;
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
-  font-size: 1.3em; // Increase font size
-  box-shadow: none; // Remove box-shadow
+  font-size: 1.3em; 
+  box-shadow: none; 
   @include transition(color);
 
   &:hover {
-    text-decoration: underline; // Add underline on hover
+    text-decoration: underline; 
     color: darken($primary-color, 10%);
   }
 }
