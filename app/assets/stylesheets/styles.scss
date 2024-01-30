@@ -1,23 +1,20 @@
-$primary-color: #007BFF;
+$primary-color: #007bff;
 $secondary-color: #0056b3;
 $error-color: #dc3545;
-$light-color: #f8f9fa; 
+$light-color: #f8f9fa;
 $dark-color: #333;
 $border-color: #ddd;
 $alt-color: #6c757d;
 
-@mixin transition($property) {
-  transition: $property 0.3s ease;
-}
-
 body {
-  font-family: 'Roboto', sans-serif; 
+  font-family: 'Roboto', sans-serif;
   background-color: $light-color;
   color: $dark-color;
-  line-height: 1.7; 
+  line-height: 1.7;
 }
 
-h1, h2 {
+h1,
+h2 {
   text-align: center;
   color: $dark-color;
   margin-top: 2em;
@@ -49,7 +46,6 @@ p {
     background-color: $primary-color;
     border-radius: 5px;
     text-decoration: none;
-    @include transition(background-color);
 
     &:hover {
       background-color: $secondary-color;
@@ -59,35 +55,33 @@ p {
 
 .auth-link-alt {
   display: block;
-  color: $primary-color; 
+  color: $primary-color;
   text-decoration: none;
-  margin: 0.1em auto; 
+  margin: 0.1em auto;
   text-align: center;
-  font-size: 1.3em; 
+  font-size: 1.3em;
   box-shadow: none;
-  @include transition(all);
 
   &:hover {
-    text-decoration: underline; 
+    text-decoration: underline;
     color: darken($primary-color, 10%);
   }
 }
 
 .auth-button-alt {
   display: block;
-  margin: 0.1em auto; 
+  margin: 0.1em auto;
   padding: 0.1em 1em;
-  color: $primary-color; 
+  color: $primary-color;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
-  font-size: 1.3em; 
-  box-shadow: none; 
-  @include transition(color);
+  font-size: 1.3em;
+  box-shadow: none;
 
   &:hover {
-    text-decoration: underline; 
+    text-decoration: underline;
     color: darken($primary-color, 10%);
   }
 }
@@ -146,7 +140,7 @@ form {
       margin-top: 1em;
       padding: 0.5em 1em;
       color: #fff;
-      background-color: #007BFF;
+      background-color: #007bff;
       border: none;
       border-radius: 5px;
       cursor: pointer;
@@ -171,4 +165,39 @@ form {
       }
     }
   }
+}
+
+.navbar {
+  background-color: #343a40;
+}
+
+.navbar-brand {
+  color: #fff;
+}
+
+.navbar-nav .nav-link {
+  color: #fff;
+  text-transform: uppercase;
+  margin-right: 1em;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffc107;
+}
+
+.navbar-nav .nav-item.active .nav-link {
+  color: #ffc107;
+}
+
+.navbar-nav {
+  margin-right: 1em;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1em;
+  flex-direction: row;
+  list-style-type: none;
 }
