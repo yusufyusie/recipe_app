@@ -6,9 +6,6 @@
       <div class="card-body">
         <h5 class="card-title"><%= link_to recipe.name, recipe %></h5>
         <p class="card-text"><%= recipe.description %></p>
-        <p class="card-text">Preparation time: <%= recipe.preparation_time %> minutes</p>
-        <p class="card-text">Cooking time: <%= recipe.cooking_time %> minutes</p>
-        <p class="card-text">Public: <%= recipe.public ? 'Yes' : 'No' %></p>
       </div>
     </div>
   <% end %>
