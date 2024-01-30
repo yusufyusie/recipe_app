@@ -1,0 +1,174 @@
+$primary-color: #007BFF;
+$secondary-color: #0056b3;
+$error-color: #dc3545;
+$light-color: #f8f9fa; 
+$dark-color: #333;
+$border-color: #ddd;
+$alt-color: #6c757d;
+
+@mixin transition($property) {
+  transition: $property 0.3s ease;
+}
+
+body {
+  font-family: 'Roboto', sans-serif; 
+  background-color: $light-color;
+  color: $dark-color;
+  line-height: 1.7; 
+}
+
+h1, h2 {
+  text-align: center;
+  color: $dark-color;
+  margin-top: 2em;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+p {
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 2em;
+}
+
+.auth-links {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2em;
+
+  .auth-link {
+    margin: 0 1em;
+    padding: 0.5em 1em;
+    color: #fff;
+    background-color: $primary-color;
+    border-radius: 5px;
+    text-decoration: none;
+    @include transition(background-color);
+
+    &:hover {
+      background-color: $secondary-color;
+    }
+  }
+}
+
+.auth-link-alt {
+  display: block;
+  color: $primary-color; 
+  text-decoration: none;
+  margin: 0.1em auto; 
+  text-align: center;
+  font-size: 1.3em; 
+  box-shadow: none;
+  @include transition(all);
+
+  &:hover {
+    text-decoration: underline; 
+    color: darken($primary-color, 10%);
+  }
+}
+
+.auth-button-alt {
+  display: block;
+  margin: 0.1em auto; 
+  padding: 0.1em 1em;
+  color: $primary-color; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.3em; 
+  box-shadow: none; 
+  @include transition(color);
+
+  &:hover {
+    text-decoration: underline; 
+    color: darken($primary-color, 10%);
+  }
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1em;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  label {
+    display: block;
+    margin-bottom: 0.25em;
+    color: $dark-color;
+    font-weight: bold;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 90%;
+    padding: 0.25em;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-bottom: 1em;
+
+    &:focus {
+      border-color: $primary-color;
+      outline: none;
+    }
+  }
+
+  .field_with_errors {
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      border-color: $error-color;
+    }
+  }
+
+  .error-message {
+    color: $error-color;
+    font-size: 0.875em;
+    margin-top: -0.75em;
+    margin-bottom: 1em;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+
+    input[type="submit"] {
+      margin-top: 1em;
+      padding: 0.5em 1em;
+      color: #fff;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+
+  .form-footer {
+    text-align: center;
+    margin-top: 1em;
+
+    a {
+      color: $primary-color;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
