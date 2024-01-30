@@ -1,10 +1,10 @@
-// Define color variables
 $primary-color: #007BFF;
 $secondary-color: #0056b3;
 $error-color: #dc3545;
-$light-color: #f4f4f4;
+$light-color: #f8f9fa; // Softer light color
 $dark-color: #333;
 $border-color: #ddd;
+$alt-color: #6c757d;
 
 // Define mixin for transition
 @mixin transition($property) {
@@ -12,10 +12,10 @@ $border-color: #ddd;
 }
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif; // Modern sans-serif font
   background-color: $light-color;
   color: $dark-color;
-  line-height: 1.6;
+  line-height: 1.7; // Increased line-height
 }
 
 h1, h2 {
@@ -58,6 +58,43 @@ p {
   }
 }
 
+.auth-link-alt {
+  display: block;
+  color: $primary-color; // Change color to primary color
+  text-decoration: none;
+  margin: 0.1em auto; // Reduced margin
+  padding: 0.1em;
+  text-align: center;
+  font-size: 1.3em; // Increase font size
+  box-shadow: none; // Remove box-shadow
+  border-radius: 5px;
+  @include transition(all);
+
+  &:hover {
+    text-decoration: underline; // Add underline on hover
+    color: darken($primary-color, 10%);
+  }
+}
+
+.auth-button-alt {
+  display: block;
+  margin: 0.1em auto; // Reduced margin
+  padding: 0.1em 1em;
+  color: $primary-color; // Change color to primary color
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.3em; // Increase font size
+  box-shadow: none; // Remove box-shadow
+  @include transition(color);
+
+  &:hover {
+    text-decoration: underline; // Add underline on hover
+    color: darken($primary-color, 10%);
+  }
+}
+
 form {
   max-width: 500px;
   margin: 0 auto;
@@ -68,7 +105,7 @@ form {
 
   label {
     display: block;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.25em;
     color: $dark-color;
     font-weight: bold;
   }
@@ -76,8 +113,8 @@ form {
   input[type="text"],
   input[type="email"],
   input[type="password"] {
-    width: 100%;
-    padding: 0.5em;
+    width: 90%;
+    padding: 0.25em;
     border: 1px solid $border-color;
     border-radius: 5px;
     font-size: 1em;
