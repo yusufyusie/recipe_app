@@ -3,13 +3,13 @@ source 'https://rubygems.org'
 ruby '3.2.2'
 
 # Install and setup devise
-gem 'devise'
-gem 'sassc-rails'
-gem 'bootstrap', '~> 4.3.1'
-gem 'jquery-rails'
 gem 'bcrypt', '~> 3.1.7'
-gem 'webpacker', '~> 5.0'
+gem 'bootstrap', '~> 4.3.1'
+gem 'devise'
+gem 'jquery-rails'
 gem 'jsbundling-rails'
+gem 'sassc-rails'
+gem 'webpacker', '~> 5.0'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 
