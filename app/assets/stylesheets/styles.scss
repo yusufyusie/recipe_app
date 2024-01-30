@@ -98,7 +98,7 @@ form {
   padding: 1em;
   background-color: #fff;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
   label {
     display: block;
@@ -138,18 +138,23 @@ form {
     margin-bottom: 1em;
   }
 
-  input[type="submit"] {
-    margin-top: 1em;
-    padding: 0.5em 1em;
-    color: #fff;
-    background-color: $primary-color;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    @include transition(background-color);
+  .actions {
+    display: flex;
+    justify-content: center;
 
-    &:hover {
-      background-color: $secondary-color;
+    input[type="submit"] {
+      margin-top: 1em;
+      padding: 0.5em 1em;
+      color: #fff;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #0056b3;
+      }
     }
   }
 
