@@ -201,3 +201,9 @@ form {
   flex-direction: row;
   list-style-type: none;
 }
+
+.custom-img {
+  object-fit: cover;
+  width: 100%; 
+  height: 200px; 
+}
