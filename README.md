@@ -161,7 +161,11 @@ Open [http://localhost:1080](http://localhost:1080) to view it in your browser.
 - LinkedIn: [in/yusufyusie](https://www.linkedin.com/in/yusufyusie)
 - Twitter: [@yusufyusiee](https://twitter.com/yusufyusiee)
 
+👤 **Omet Omeni**
 
+- GitHub: [@ometman](https://github.com/ometman)
+- LinkedIn: [in/ometman](https://www.linkedin.com/in/ometman)
+  
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
