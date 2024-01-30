@@ -5,6 +5,9 @@ ruby '3.2.2'
 # Install and setup devise
 gem 'devise'
 gem 'sassc-rails'
+gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'
+gem 'bcrypt', '~> 3.1.7'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 
