@@ -1,27 +1,27 @@
 <h1>Welcome to Ometman-Yusef Recipe App</h1>
 <nav class="auth-links">
   <% if user_signed_in? %>
-  <div class="container">
+<div class="container">
   <div class="row">
-    <% @recipes.each do |recipe| %>
+    <% 3.times do %>
       <div class="col-md-4">
         <div class="card mb-4 shadow-sm">
           <%= image_tag 'recipe_img.jpg', class: 'card-img-top custom-img' %>
           <div class="card-body text-center">
-            <h5 class="card-name"><%= link_to recipe.name, recipe_path(recipe) %></h5>
-            <p class="card-text"><%= truncate(recipe.description, length: 100) %></p>
+            <h5 class="card-name"><%= link_to 'Delicious Recipe', '#' %></h5>
+            <p class="card-text"><%= truncate('This is a sample description for a delicious recipe. It includes all the ingredients and steps you need to make it at home.', length: 100) %></p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <%= link_to 'View Recipe', recipe_path(recipe), class: 'btn btn-sm btn-outline-secondary' %>
+                <%= link_to 'View Recipe', '#', class: 'btn btn-sm btn-outline-secondary' %>
               </div>
-              <small class="text-muted"><%= time_ago_in_words(recipe.created_at) %> ago</small>
+              <small class="text-muted">3 days ago</small>
             </div>
           </div>
         </div>
       </div>
     <% end %>
   </div>
-   <p>Discover new recipes, share your own, and connect with other food lovers.</p>
+  <p class="text-center mt-4">Discover new recipes, share your own, and connect with other food lovers.</p>
 </div>
   <% else %>
   <p>Login or Register here to use</p>
