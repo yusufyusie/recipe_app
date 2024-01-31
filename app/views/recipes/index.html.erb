@@ -1,14 +1,18 @@
 <div class="container">
   <h1>My Recipes</h1>
-   <%= link_to 'New Recipe', new_recipe_path, class: 'btn btn-primary' %>
+  <%= link_to 'New Recipe', new_recipe_path, class: 'btn btn-primary mb-3 custom-btn' %>
   <% @recipes.each do |recipe| %>
-    <div class="card">
+    <div class="card mb-4 recipe-card mx-auto">
       <div class="card-body">
-        <h5 class="card-title"><%= link_to recipe.name, recipe %></h5>
-        <p class="card-text"><%= recipe.description %></p>
-        <p class="card-text">Preparation time: <%= recipe.preparation_time %> minutes</p>
-        <p class="card-text">Cooking time: <%= recipe.cooking_time %> minutes</p>
-        <p class="card-text">Public: <%= recipe.public ? 'Yes' : 'No' %></p>
+        <div class="rect d-flex justify-content-between">
+          <div>
+            <h5 class="card-title"><%= link_to recipe.name, recipe %></h5>
+            <%= link_to 'Remove', recipe, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger mt-2' %>
+          </div>
+          <div>
+            <p class="card-text description-text"><%= recipe.description %></p>
+          </div>
+        </div>
       </div>
     </div>
   <% end %>

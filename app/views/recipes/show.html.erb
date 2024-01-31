@@ -1,7 +1,24 @@
 <div class="container">
   <h1><%= @recipe.name %></h1>
-  <p><%= @recipe.description %></p>
-  <p>Preparation time: <%= @recipe.preparation_time %> minutes</p>
-  <p>Cooking time: <%= @recipe.cooking_time %> minutes</p>
-  <p>Public: <%= @recipe.public ? 'Yes' : 'No' %></p>
+  <div class="card mb-4 recipe-details-card mx-auto">
+    <div class="card-body">
+      <div class="rect d-flex justify-content-between">
+        <div class="paragraph">
+          <p>Preparation time: <%= @recipe.preparation_time %> minutes</p>
+          <p>Cooking time: <%= @recipe.cooking_time %> minutes</p>
+          <p class="description-text"><%= @recipe.description %></p>
+        </div>
+        <div class="public">
+          <%= form_with(model: @recipe, method: :patch, local: true) do |form| %>
+            <% if user_signed_in? && current_user == @recipe.user %>
+              <div>
+                <%= form.label :public, style: "display: block" %>
+                <%= form.check_box :public, onchange: "this.form.submit()" %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
