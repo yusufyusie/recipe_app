@@ -1,0 +1,17 @@
+<!-- app/views/foods/index.html.erb -->
+
+<h1>Your Foods</h1>
+
+<% @foods.each do |food| %>
+  <div class="food">
+    <h2><%= food.name %></h2>
+    <ul>
+      <% food.recipe_foods.each do |recipe_food| %>
+        <li>
+          <%= recipe_food.recipe.name %> -
+          Quantity: <%= recipe_food.quantity %> units
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

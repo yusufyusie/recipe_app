@@ -1,0 +1,26 @@
+<!-- app/views/recipe_foods/new.html.erb -->
+
+<h1>Create a New Recipe Food</h1>
+
+<%= form_with(model: [@user, @recipe_food], url: user_recipe_foods_path(@user), local: true) do |form| %>
+  <div>
+    <%= form.label :quantity %>
+    <%= form.number_field :quantity %>
+  </div>
+
+  <div>
+    <%= form.label :recipe_id %>
+    <%= form.collection_select(:recipe_id, @user.recipes, :id, :name, prompt: 'Select a Recipe') %>
+  </div>
+
+  <div>
+    <%= form.label :food_id %>
+    <%= form.collection_select(:food_id, @user.foods, :id, :name, prompt: 'Select a Food') %>
+  </div>
+
+  <div>
+    <%= form.submit "Create Recipe Food" %>
+  </div>
+<% end %>
+
+<%= link_to "Back to Recipe Foods List", user_recipe_foods_path(@user) %>
