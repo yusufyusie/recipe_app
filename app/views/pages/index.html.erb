@@ -25,7 +25,7 @@
 </div>
   <% else %>
   <p>Login or Register here to use</p>
-    <%= link_to 'Sign in', new_user_session_path, class: 'auth-link' %>
-    <%= link_to 'Sign up', new_user_registration_path, class: 'auth-link' %>
+    <%= link_to 'Sign in', new_session_path, class: 'auth-link' %>
+    <%= link_to 'Sign up', new_user_path, class: 'auth-link' %>
   <% end %>
 </nav>
