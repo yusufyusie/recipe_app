@@ -13,8 +13,12 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Resource routes
-  resources :foods, only: [:index, :show]
-  resources :recipes
+  resources :users do
+    resources :recipes, only: [:index, :new, :create, :destroy] do
+      resources :foods, only: [:index, :new, :create, :destroy] do
+        resources :recipe_foods, only: [:show, :edit, :update, :destroy]
+    end
+  end
 
   # dynamic pages
   get 'public_recipes', to: 'recipes#public_recipes'
