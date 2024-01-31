@@ -317,3 +317,20 @@ form {
 .btnn-primary:hover {
   background-color: #0056b3;
 }
+
+.auth-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 20%;
+  padding: 2em;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.5em;
+}
+
+.home-auth-link {
+  text-decoration: none;
+}
