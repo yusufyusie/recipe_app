@@ -22,11 +22,6 @@
       <%= f.text_area :description, class: 'form-control' %>
     </div>
 
-    <div class="form-group">
-      <%= f.label :public %>
-      <%= f.select :public, [['Yes', true], ['No', false]], {}, class: 'form-control' %>
-    </div>
-
     <%= f.submit 'Create Recipe', class: 'btn btn-primary' %>
   <% end %>
 </div>

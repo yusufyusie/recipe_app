@@ -1,7 +1,17 @@
 <div class="container">
   <h1><%= @recipe.name %></h1>
-  <p>Preparation time: <%= @recipe.preparation_time %> minutes</p>
-  <p>Cooking time: <%= @recipe.cooking_time %> minutes</p>
-  <p><%= @recipe.description %></p>
-  <p>Public: <%= @recipe.public ? 'Yes' : 'No' %></p>
+  <div class="card mb-4 recipe-details-card mx-auto">
+    <div class="card-body">
+      <div class="rect d-flex justify-content-between">
+        <div class="paragraph">
+          <p>Preparation time: <%= @recipe.preparation_time %> minutes</p>
+          <p>Cooking time: <%= @recipe.cooking_time %> minutes</p>
+          <p class="description-text"><%= @recipe.description %></p>
+        </div>
+        <div class="pubic">
+          <p>Public: <%= @recipe.public ? 'Yes' : 'No' %></p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
