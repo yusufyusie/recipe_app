@@ -1,8 +1,18 @@
-<h1>Public Recipes</h1>
-
-<% @recipes.each do |recipe| %>
-  <div class="publicrecipe-title">
-      <%= link_to recipe.name, recipe_path(recipe) %>
-      <p> By: <%= recipe.user.name %> </p>
+<div class="container">
+  <h1>Public Recipes</h1>
+  <% @recipes.each do |recipe| %>
+    <div class="card mb-4 recipe-card mx-auto">
+      <div class="card-body">
+        <div class="rect d-flex justify-content-between">
+          <div>
+            <h5 class="card-title"><%= link_to recipe.name, recipe_path(recipe) %></h5>
+            <p> By: <%= recipe.user.name %> </p>
+          </div>
+          <div>
+            <p class="card-text description-text">Sample data</p>
+          </div>
+        </div>
       </div>
-<% end %>
+    </div>
+  <% end %>
+</div>
