@@ -224,14 +224,19 @@ form {
   gap: 4em;
 }
 
+.card-title {
+  width: 100%;
+}
+
 .description-text {
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   min-height: 48px;
+  max-width: 500px;
 }
 
 .btn-danger {
