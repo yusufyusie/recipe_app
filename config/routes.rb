@@ -6,7 +6,7 @@ Rails.application.routes.draw do
  end
 
   # Static pages
-  get 'home', to: 'pages#index'
+  get 'index', to: 'pages#index', as: :index
   root "pages#index"
 
   # Health check
