@@ -6,7 +6,7 @@
       <div class="card-body">
         <div class="rect d-flex justify-content-between">
           <div>
-            <h5 class="card-title"><%= link_to recipe.name, recipe %></h5>
+            <h4 class="card-title recipe-name"><%= link_to recipe.name, recipe %></h4>
             <%= link_to 'Remove', recipe, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger mt-2' %>
           </div>
           <div>
