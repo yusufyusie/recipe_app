@@ -4,5 +4,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
-         attr_accessible :name
+
+  has_many :recipes, dependent: :delete_all
+
+  validates :name, presence: true
 end
