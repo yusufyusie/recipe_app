@@ -1,0 +1,25 @@
+<div class="recipelist-container">
+  <h1>Public Recipes</h1>
+
+  <ul>
+    <div class="public-recipes">
+      <% @public_recipes.each do |recipe| %>
+        <li>
+          <div class="public-recipe-all">
+            <div class="publicrecipe-title">
+              <%= link_to recipe.name, recipe_path(recipe) %>
+              <p> By: <%= recipe.user.name %> </p>
+            </div>
+            <div class="fooditem">
+              <p> Total food items: <%= recipe.food_items.count %> </p>
+              <p> Total price: $<%= recipe.food_items.sum(:price) %></p>
+            </div>
+            <% if current_user == recipe.user %>
+              <!-- Add any user-specific actions here -->
+            <% end %>
+          </div>
+        </li>
+      <% end %>
+    </div>
+  </ul>
+</div>
