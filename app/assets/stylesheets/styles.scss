@@ -334,3 +334,12 @@ form {
 .home-auth-link {
   text-decoration: none;
 }
+
+.mb-3.form-check {
+  display: flex;
+  align-items: center;
+
+  .form-check-label {
+    margin-right: 10px;
+  }
+}
