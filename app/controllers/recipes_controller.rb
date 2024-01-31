@@ -13,6 +13,10 @@ class RecipesController < ApplicationController
     @recipe = current_user.recipes.build
   end
 
+  def public_recipes
+    @recipes = Recipe.where(public: true)
+  end
+
   def create
     @recipe = current_user.recipes.build(recipe_params)
     if @recipe.save

@@ -11,10 +11,8 @@ Rails.application.routes.draw do
 
   # Resource routes
   resources :foods, only: [:index, :show]
-  resources :recipes, only: [:index, :show, :create, :update, :destroy]
+  resources :recipes
 
-    # dynamic pages
-    get 'recipes/new', to: 'recipes#new', as: 'new_recipe'
-    post 'recipes', to: 'recipes#create'
-    get '/public_reciipes', to: 'reciipes#public_reciipes', as: 'public_reciipes'
+  # dynamic pages
+  get 'public_recipes', to: 'recipes#public_recipes'
 end
