@@ -6,14 +6,14 @@
         <div class="paragraph">
           <p>Preparation time: <%= @recipe.preparation_time %> minutes</p>
           <p>Cooking time: <%= @recipe.cooking_time %> minutes</p>
-          <p class="description-text"><%= @recipe.description %></p>
+          <p class="description-text">Description: <%= @recipe.description %></p>
         </div>
         <div class="public">
           <%= form_with(model: @recipe, method: :patch, local: true) do |form| %>
             <% if user_signed_in? && current_user == @recipe.user %>
-              <div>
-                <%= form.label :public, style: "display: block" %>
-                <%= form.check_box :public, onchange: "this.form.submit()" %>
+              <div class="mb-3 form-check">
+                <%= form.label :public, style: "display: block", class: "form-check-label" %>
+                <%= form.check_box :public, onchange: "this.form.submit()", class: "form-check-input" %>
               </div>
             <% end %>
           <% end %>

@@ -17,7 +17,7 @@ h1,
 h2 {
   text-align: center;
   color: $dark-color;
-  margin-top: 2em;
+  margin-top: 0.5em;
 }
 
 h1 {
@@ -341,5 +341,24 @@ form {
 
   .form-check-label {
     margin-right: 10px;
+  }
+}
+
+.back-link {
+  display: inline-block;
+  color: #fff;
+  background-color: #007bff;
+  padding: 6px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+
+  &:active {
+    background-color: #004085;
   }
 }
