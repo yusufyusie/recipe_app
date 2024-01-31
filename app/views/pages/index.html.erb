@@ -24,8 +24,9 @@
   <p class="text-center mt-4">Discover new recipes, share your own, and connect with other food lovers.</p>
 </div>
   <% else %>
-  <p>Login or Register here to use</p>
-    <%= link_to 'Sign in', new_user_session_path, class: 'auth-link' %>
-    <%= link_to 'Sign up', new_user_registration_path, class: 'auth-link' %>
+<div class="auth-container">
+  <%= link_to 'Sign in', new_user_session_path, class: 'home-auth-link btnn-primary' %>
+  <%= link_to 'Sign up', new_user_registration_path, class: 'home-auth-link btnn-primary' %>
+</div>
   <% end %>
 </nav>
