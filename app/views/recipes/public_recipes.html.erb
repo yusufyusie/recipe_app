@@ -4,11 +4,11 @@
     <div class="card mb-4 recipe-card mx-auto">
       <div class="card-body">
         <div class="rect d-flex justify-content-between">
-          <div>
-            <h5 class="card-title"><%= link_to recipe.name, recipe_path(recipe) %></h5>
+          <div class="public-recipe-data">
+            <h3 class="card-title"><%= link_to recipe.name, recipe_path(recipe) %></h3>
             <p> By: <%= recipe.user.name %> </p>
           </div>
-          <div>
+          <div class="food-data">
             <p class="card-text description-text">Total food items:</p>
             <p class="card-text description-text">Total price:</p>
           </div>
