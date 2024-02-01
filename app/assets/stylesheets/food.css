@@ -1,22 +1,20 @@
 .food-form-container {
-    display: block;
-    width: 100%;
-    text-align: center;
-    background: white;
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: white;
 }
-
-
 
 .food-table,
 .btn-container {
-    width: 50%;
-    margin: 0 auto;
-    text-align: left;
-    margin-bottom: 2%;
+  width: 50%;
+  margin: 0 auto;
+  text-align: left;
+  margin-bottom: 2%;
 }
 
 .btn-container {
-    text-align: right;
+  text-align: right;
 }
 
 .food-table th,
@@ -34,7 +32,7 @@
 }
 
 .food-odd-row {
-  background-color: #ffffff;
+  background-color: #fff;
 }
 
 .food-table td:nth-child(1) { /* First column (Food) */
@@ -54,7 +52,7 @@
 }
 
 .new-food-btn {
-  box-shadow: 4px 4px 6px #888888;
+  box-shadow: 4px 4px 6px #888;
   text-decoration: none;
   padding: 2px;
 }
