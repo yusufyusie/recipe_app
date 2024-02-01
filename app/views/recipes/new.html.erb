@@ -22,5 +22,17 @@
       <%= form.text_area :description, class: 'form-control' %>
     </div>
     <%= form.submit 'Create Recipe', class: 'btn btnn-primary' %>
+
+
+<!--      <div class="mb-3 form-check">
+      <%= f.label :public, class: "form-check-label" %>      
+      <%= f.check_box :public, class: "form-check-input" %>
+    </div>
+
+    <%= f.submit 'Create Recipe', class: 'btn btnn-primary' %> -->
+
   <% end %>
+  <div>
+  <%= link_to "Back to recipes", recipes_path, class: "back-link" %>
+</div>
 </div>

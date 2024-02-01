@@ -17,7 +17,7 @@ h1,
 h2 {
   text-align: center;
   color: $dark-color;
-  margin-top: 2em;
+  margin-top: 0.5em;
 }
 
 h1 {
@@ -226,12 +226,13 @@ form {
 
 .description-text {
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   min-height: 48px;
+  max-width: 500px;
 }
 
 .btn-danger {
@@ -239,10 +240,40 @@ form {
 }
 
 .custom-btn {
-  margin-left: 18%;
+  margin-left: 20%;
   font-weight: 500;
-  font-size: 1.5em;
-  padding: 0.25em;
+  justify-content: center;
+  align-items: center;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+
+  &:active {
+    background-color: #004085;
+  }
+}
+
+.recipe-name {
+  font-size: 20px;
+  color: #007bff;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      color: #0056b3;
+      text-decoration: underline;
+    }
+  }
 }
 
 .recipe-details-card {
@@ -316,3 +347,57 @@ form {
 .btnn-primary:hover {
   background-color: #0056b3;
 }
+
+.auth-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 20%;
+  padding: 2em;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.5em;
+}
+
+.home-auth-link {
+  text-decoration: none;
+}
+
+.mb-3.form-check {
+  display: flex;
+  align-items: center;
+
+  .form-check-label {
+    margin-right: 10px;
+  }
+}
+
+.back-link {
+  display: inline-block;
+  color: #fff;
+  background-color: #007bff;
+  padding: 6px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+
+  &:active {
+    background-color: #004085;
+  }
+}
+
+  span {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+    align-items: flex-start;
+  }
+
