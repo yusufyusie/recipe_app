@@ -10,6 +10,6 @@ class CreateFoods < ActiveRecord::Migration[7.1]
       t.timestamps
     end
 
-    add_index :foods, :user_id
+    add_index :foods, :user_id unless index_exists?(:foods, :user_id)
   end
 end
