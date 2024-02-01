@@ -170,25 +170,25 @@ input[type="password"] {
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: #fff;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-top: 5px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .auth-link-item {
-  color: #333;
+  color: $dark-color;
 
   a {
-    color: #3498db;
+    color: $primary-color;
     text-decoration: none;
-    font-weight: 600; // make the link text bold
-    padding: 2px; // add some padding
-    border-bottom: 2px solid #3498db; // add a bottom border
+    font-weight: 600;
+    padding: 2px;
+    border-bottom: 2px solid $primary-color;
 
     &:hover {
-      color: darken(#3498db, 10%);
-      border-bottom: 2px solid darken(#3498db, 10%); // darken the border on hover
+      color: darken($primary-color, 10%);
+      border-bottom: 2px solid darken($primary-color, 10%);
     }
   }
 
@@ -201,14 +201,14 @@ input[type="password"] {
     cursor: pointer;
 
     &:hover {
-      background-color: darken(#3498db, 10%);
+      background-color: darken($primary-color, 10%);
     }
   }
 }
 
 .recipe-name {
   font-size: 20px;
-  color: #007bff;
+  color: $primary-color;
 
   a {
     color: inherit;
@@ -216,7 +216,7 @@ input[type="password"] {
     cursor: pointer;
 
     &:hover {
-      color: #0056b3;
+      color: $secondary-color;
       text-decoration: underline;
     }
   }
