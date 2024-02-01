@@ -5,14 +5,16 @@
       <div class="card-body">
         <div class="rect d-flex justify-content-between">
           <div class="public-recipe-data">
-            <h3 class="card-title"><%= link_to recipe.name, user_recipe_path(current_user, recipe) %></h3>
-
+            <h3 class="card-title"><%= link_to recipe.name, user_recipe_path(recipe.user, recipe) %></h3>
             <p> By: <%= recipe.user.name %> </p>
           </div>
           <div class="food-data">
             <p class="card-text description-text">Total food items:</p>
             <p class="card-text description-text">Total price:</p>
           </div>
+          <% if recipe.user == current_user %>
+            <%= link_to 'Delete', user_recipe_path(recipe.user, recipe), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+          <% end %>
         </div>
       </div>
     </div>
