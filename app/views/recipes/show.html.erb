@@ -9,7 +9,7 @@
           <p class="description-text"><%= @recipe.description %></p>
         </div>
         <div class="public">
-          <%= form_with(model: @recipe, method: :patch, local: true) do |form| %>
+          <%= form_with(model: [current_user, @recipe], method: :patch, local: true) do |form| %>
             <% if user_signed_in? && current_user == @recipe.user %>
               <div>
                 <%= form.label :public, style: "display: block" %>
