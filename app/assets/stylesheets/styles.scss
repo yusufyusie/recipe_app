@@ -160,6 +160,7 @@ input[type="password"] {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  max-width: 500px;
   gap: 10px;
   padding: 20px;
   border: 1px solid #ddd;
@@ -167,6 +168,8 @@ input[type="password"] {
   background-color: #fff;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .auth-link-item {
