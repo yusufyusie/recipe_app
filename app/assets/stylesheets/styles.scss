@@ -26,7 +26,8 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5em;
+  font-size: 1.4em;
+  margin-bottom: 0.125em;
 }
 
 p {
@@ -89,16 +90,18 @@ p {
 
 form {
   max-width: 500px;
+  max-height: 75vh; /* Set maximum height to 80% of the viewport height */
   margin: 0 auto;
-  padding: 1em;
+  padding: 0.5em;
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: auto; /* Add scroll if content exceeds max-height */
 }
 
 label {
   display: block;
-  margin-bottom: 0.25em;
+  margin-bottom: 0.01em; /* Reduce margin */
   color: $dark-color;
   font-weight: bold;
 }
@@ -107,11 +110,11 @@ input[type="text"],
 input[type="email"],
 input[type="password"] {
   width: 90%;
-  padding: 0.25em;
+  padding: 0.01em; /* Reduce padding */
   border: 1px solid $border-color;
   border-radius: 5px;
-  font-size: 1em;
-  margin-bottom: 1em;
+  font-size: 0.775em; /* Reduce font size */
+  margin-bottom: 0.01em; /* Further reduce margin */
 
   &:focus {
     border-color: $primary-color;
@@ -129,9 +132,9 @@ input[type="password"] {
 
 .error-message {
   color: $error-color;
-  font-size: 0.875em;
-  margin-top: -0.75em;
-  margin-bottom: 1em;
+  font-size: 0.75em; /* Reduce font size */
+  margin-top: -0.375em; /* Reduce margin */
+  margin-bottom: 0.5em; /* Reduce margin */
 }
 
 .actions {
@@ -139,10 +142,10 @@ input[type="password"] {
   justify-content: center;
 
   input[type="submit"] {
-    margin-top: 1em;
-    padding: 0.5em 0.5em;
+    margin-top: 0.25em; /* Reduce margin */
+    padding: 0.25em 0.5em; /* Reduce padding */
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 1.25rem; /* Reduce font size */
     background-color: #007bff;
     border: none;
     border-radius: 5px;
@@ -156,18 +159,19 @@ input[type="password"] {
 }
 
 .auth-links-container {
+  max-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 500px;
+  max-width: 480px;
   gap: 10px;
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: #fff;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  margin-top: 10px;
+  margin-top: 5px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -179,7 +183,7 @@ input[type="password"] {
     color: #3498db;
     text-decoration: none;
     font-weight: 600; // make the link text bold
-    padding: 5px; // add some padding
+    padding: 2px; // add some padding
     border-bottom: 2px solid #3498db; // add a bottom border
 
     &:hover {
