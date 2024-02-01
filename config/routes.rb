@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
- end
+  end
 
   # Static pages
   get 'home', to: 'pages#index'
@@ -13,8 +13,17 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Resource routes
-  resources :foods, only: [:index, :show]
-  resources :recipes
+  authenticated :user do
+    resources :users do
+      resources :recipes, only: [:index, :show, :new, :create, :destroy, :edit, :update] do
+        resources :recipe_foods, only: [:show, :edit, :update, :destroy]
+      end
+      resources :foods do
+          resources :recipe_foods, only: [:show, :edit, :update, :destroy]
+      end
+    end
+  end
+  
 
   # dynamic pages
   get 'public_recipes', to: 'recipes#public_recipes'
