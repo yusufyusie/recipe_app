@@ -12,7 +12,11 @@ Rails.application.routes.draw do
     get 'register', to: 'devise/registrations#new', as: :new_user_registration
     post 'register', to: 'devise/registrations#create', as: :user_registration
     get 'secret', to: 'devise/passwords#new', as: :new_user_password
+    post 'secret', to: 'devise/passwords#create', as: :user_password
+    get 'secret/edit', to: 'devise/passwords#edit', as: :edit_user_password
+    patch 'secret', to: 'devise/passwords#update'
     get 'confirmation', to: 'devise/confirmations#new', as: :new_user_confirmation
+    post 'confirmation', to: 'devise/confirmations#create', as: :user_confirmation
   end
 
   # Static pages

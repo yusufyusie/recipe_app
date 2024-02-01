@@ -10,6 +10,7 @@ body {
   font-family: 'Roboto', sans-serif;
   background-color: $light-color;
   color: $dark-color;
+  height: 100vh;
   line-height: 1.7;
 }
 
@@ -139,8 +140,9 @@ input[type="password"] {
 
   input[type="submit"] {
     margin-top: 1em;
-    padding: 0.5em 1em;
+    padding: 0.5em 0.5em;
     color: #fff;
+    font-size: 1.5rem;
     background-color: #007bff;
     border: none;
     border-radius: 5px;
@@ -149,6 +151,50 @@ input[type="password"] {
 
     &:hover {
       background-color: #0056b3;
+    }
+  }
+}
+
+.auth-links-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+}
+
+.auth-link-item {
+  color: #333;
+
+  a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 600; // make the link text bold
+    padding: 5px; // add some padding
+    border-bottom: 2px solid #3498db; // add a bottom border
+
+    &:hover {
+      color: darken(#3498db, 10%);
+      border-bottom: 2px solid darken(#3498db, 10%); // darken the border on hover
+    }
+  }
+
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken(#3498db, 10%);
     }
   }
 }
