@@ -1,16 +1,26 @@
 Rails.application.routes.draw do
-  # Devise routes
-  devise_for :users
+  # Devise routes for user authentication
+  devise_for :users, skip: :all, path: 'auth', controllers: { sessions: 'users/sessions' },
+                     path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret',
+                                   confirmation: 'verification', unlock: 'unblock',
+                                   registration: 'register', sign_up: 'cmon_let_me_in' }
+
   devise_scope :user do
-    get '/users/sign_out' => 'devise/sessions#destroy'
+    get 'login', to: 'devise/sessions#new', as: :new_user_session
+    post 'login', to: 'devise/sessions#create', as: :user_session
+    get '/logout', to: 'devise/sessions#destroy', as: :destroy_user_session
+    get 'register', to: 'devise/registrations#new', as: :new_user_registration
+    post 'register', to: 'devise/registrations#create', as: :user_registration
+    get 'secret', to: 'devise/passwords#new', as: :new_user_password
+    get 'confirmation', to: 'devise/confirmations#new', as: :new_user_confirmation
   end
 
   # Static pages
-  get 'home', to: 'pages#index'
-  root "pages#index"
+  root to: 'pages#index'
+  get 'home', to: 'pages#index', as: :home
 
   # Health check
-  get "up" => "rails/health#show", as: :rails_health_check
+  get 'up', to: 'rails/health#show', as: :rails_health_check
 
   # Resource routes
   authenticated :user do
@@ -19,12 +29,11 @@ Rails.application.routes.draw do
         resources :recipe_foods, only: [:show, :edit, :update, :destroy]
       end
       resources :foods do
-          resources :recipe_foods, only: [:show, :edit, :update, :destroy]
+        resources :recipe_foods, only: [:show, :edit, :update, :destroy]
       end
     end
   end
-  
 
-  # dynamic pages
-  get 'public_recipes', to: 'recipes#public_recipes'
+  # Dynamic pages
+  get 'public_recipes', to: 'recipes#public_recipes', as: :public_recipes
 end
