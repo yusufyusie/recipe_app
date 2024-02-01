@@ -8,7 +8,7 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = current_user.recipes.find(params[:id])
+    @recipe = Recipe.find(params[:id])
   end
 
   def new
@@ -39,7 +39,7 @@ class RecipesController < ApplicationController
   end
 
   def destroy
-    @recipe = current_user.recipes.find(params[:id])
+    @recipe = Recipe.find(params[:id])
     @recipe.destroy
     redirect_to user_recipes_path(current_user), notice: 'Recipe was successfully deleted.'
   end
@@ -47,6 +47,6 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :description, :public)
+    params.require(:recipe).permit(:name, :description, :public, :preparation_time, :cooking_time)
   end
 end
