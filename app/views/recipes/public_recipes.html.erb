@@ -12,9 +12,13 @@
             <p class="card-text description-text">Total food items:</p>
             <p class="card-text description-text">Total price:</p>
           </div>
-          <% if recipe.user == current_user %>
-            <%= link_to 'Delete', user_recipe_path(recipe.user, recipe), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+            <div class="delete-data">
+              <% if recipe.user == current_user %>
+             <%= form_with model: [recipe.user, recipe], method: :delete, class: 'd-inline' do |f| %>
+              <%= f.submit "Delete", data: { confirm: 'Are you sure?' }, class: 'btn btn-danger-no-bg mt-2' %>
+            <% end %>
           <% end %>
+            </div>
         </div>
       </div>
     </div>
