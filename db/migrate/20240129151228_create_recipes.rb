@@ -10,6 +10,6 @@ class CreateRecipes < ActiveRecord::Migration[7.1]
       t.timestamps
     end
 
-    add_index :recipes, :user_id
+    add_index :recipes, :user_id unless index_exists?(:recipes, :user_id)
   end
 end
