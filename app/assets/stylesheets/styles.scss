@@ -34,55 +34,81 @@ p {
   margin-bottom: 2em;
 }
 
-.auth-links {
+.auth-container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  margin-bottom: 2em;
+  min-height: 100vh;
 
-  .auth-link {
-    margin: 0 1em;
-    padding: 0.5em 1em;
-    color: #fff;
-    background-color: $primary-color;
-    border-radius: 5px;
-    text-decoration: none;
+  .auth-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
 
-    &:hover {
-      background-color: $secondary-color;
+    .auth-link {
+      margin-bottom: 10px;
+
+      a {
+        color: #333;
+        text-decoration: none;
+        font-size: 30px;
+        &:hover {
+          color: #007BFF;
+        }
+      }
+
+      button {
+        background-color: #007BFF;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        &:hover {
+          background-color: #0069D9;
+        }
+      }
     }
   }
 }
 
-.auth-link-alt {
-  display: block;
-  color: $primary-color;
-  text-decoration: none;
-  margin: 0.1em auto;
-  text-align: center;
-  font-size: 1.3em;
-  box-shadow: none;
-
-  &:hover {
-    text-decoration: underline;
-    color: darken($primary-color, 10%);
-  }
+.auth-links1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px; // This will give some space between the form and the links
 }
 
-.auth-button-alt {
-  display: block;
-  margin: 0.1em auto;
-  padding: 0.1em 1em;
-  color: $primary-color;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 1.3em;
-  box-shadow: none;
+.auth-link1 {
+  margin-bottom: 10px;
 
-  &:hover {
-    text-decoration: underline;
-    color: darken($primary-color, 10%);
+  a, button {
+    color: #007BFF;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: 1px solid #007BFF;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    &:hover {
+      background-color: #007BFF;
+      color: white;
+    }
+  }
+
+  button {
+    background-color: transparent;
+    border-color: #007BFF;
+    color: #007BFF;
+    cursor: pointer;
   }
 }
 
