@@ -1,5 +1,10 @@
 <div class="container">
   <h1><%= @recipe.name %></h1>
+  <% if current_user == @recipe.user %>
+    <div class="btn-container">
+      <%= link_to 'Add New Food', new_user_food_path(current_user), class: 'btn btn-primary mb-3 new-food-btn float-right' %>
+    </div>
+  <% end %>
   <div class="card mb-4 recipe-details-card mx-auto">
     <div class="card-body">
       <div class="rect d-flex justify-content-between">
