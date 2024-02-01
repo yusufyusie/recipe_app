@@ -3,24 +3,34 @@
 class FoodsController < ApplicationController
     before_action :authenticate_user!
     before_action :set_user
-    before_action :set_food, only: [:show, :edit, :update, :destroy]
+    # before_action :set_food, only: [:new, :show, :create, :destroy]
   
     def index
-      @foods = @user.foods.includes(recipe_foods: :recipe) # fixed N+1
+    @foods = @user.foods.includes(recipe_foods: :recipe) # fixed N+
     #   @recipes_with_foods = @user.recipes.includes(recipe_foods: :foods)
     end
+
+  #   def show
+  #  @foods = @user.foods
+  #   end
   
     def new
+      # @food = @user.foods.find_by(params[:id])
       @food = @user.foods.build
     end
   
     def create
       @food = @user.foods.build(food_params)
       if @food.save
-        redirect_to foods_path, notice: 'Food added successfully.'
+        redirect_to user_foods_path(@user), notice: 'Food added successfully.'
       else
         render :new
       end
+    end
+
+    def destroy
+      @food.destroy
+      redirect_to user_foods_path(@user), notice: 'Food deleted successfully.'
     end
   
     def shopping_list
@@ -34,17 +44,13 @@ class FoodsController < ApplicationController
       @user = current_user
     end
   
-    def set_food
-      @food = @user.foods.find(params[:id])
-    end
-  
     def food_params
       params.require(:food).permit(:name, :measurement_unit, :price, :quantity)
     end
   
     def calculate_missing_foods
         # Get all foods for the user
-        user_foods = @user.foods.pluck(:name)
+        user_foods = @user.foods.pluck(:id)
       
         # Get all foods needed for recipes
         recipe_foods = RecipeFood.includes(:food, :recipe).where(recipes: { user_id: @user.id })
