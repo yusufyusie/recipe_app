@@ -4,21 +4,22 @@
     <div class="card-body">
       <div class="rect d-flex justify-content-between">
         <div class="paragraph">
-          <p>Preparation time: <%= @recipe.preparation_time %> minutes</p>
-          <p>Cooking time: <%= @recipe.cooking_time %> minutes</p>
-          <p class="description-text"><%= @recipe.description %></p>
+          <p><span>Preparation time: </span><%= @recipe.preparation_time %> minutes</p>
+          <p><span>Cooking time: </span><%= @recipe.cooking_time %> minutes</p>
+          <p class="description-text"><span>Description: </span><%= @recipe.description %></p>
         </div>
         <div class="public">
           <%= form_with(model: [current_user, @recipe], method: :patch, local: true) do |form| %>
             <% if user_signed_in? && current_user == @recipe.user %>
-              <div>
-                <%= form.label :public, style: "display: block" %>
-                <%= form.check_box :public, onchange: "this.form.submit()" %>
+              <div class="mb-3 form-check">
+                <%= form.label :public, style: "display: block", class: "form-check-label" %>
+                <%= form.check_box :public, onchange: "this.form.submit()", class: "form-check-input" %>
               </div>
             <% end %>
           <% end %>
         </div>
       </div>
     </div>
+  <%= link_to "Back to recipes", recipes_path, class: "back-link" %>
   </div>
 </div>
