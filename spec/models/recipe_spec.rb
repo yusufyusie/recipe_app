@@ -1,5 +1,7 @@
 require 'rails_helper'
 
+TestFixtures.fixture_paths = [File.join(Rails.root, 'spec', 'fixtures')]
+
 RSpec.describe Recipe, type: :model do
   let(:user) { create(:user) }
   let(:recipe) { build(:recipe, user: user) }
