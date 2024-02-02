@@ -43,7 +43,7 @@ RSpec.configure do |config|
   # config.use_active_record = false
   config.include FactoryBot::Syntax::Methods
 
-  RSpec.configure do |config|
+  RSpec.configure do |_rspec_config|
     config.include Devise::Test::IntegrationHelpers, type: :feature
   end
   # RSpec Rails can automatically mix in different behaviours to your tests
