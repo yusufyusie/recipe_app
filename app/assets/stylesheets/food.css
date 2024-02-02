@@ -56,3 +56,21 @@
   text-decoration: none;
   padding: 2px;
 }
+
+.button_to {
+  background-color: red;
+  color: #fff;
+  border: none;
+  padding: 1px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.button_to:hover {
+  background-color: red;
+}

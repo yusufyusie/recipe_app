@@ -19,7 +19,7 @@
         <td><%= food.measurement_unit %></td>
         <td><%= number_to_currency(food.price / food.quantity) %></td>
         <td>
-          <%= button_to 'Delete', user_food_path(current_user, food), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-button' %>
+          <%= button_to 'Delete', user_food_path(current_user, food), method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
     <% end %>
