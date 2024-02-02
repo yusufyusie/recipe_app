@@ -3,16 +3,16 @@ require 'rails_helper'
 RSpec.describe 'When I open user index page', type: :feature do
   before(:each) do
     User.delete_all
-    @user1 = User.create(name: 'Lily', email: 'lily@example.com', password: 'topsecret')
-    @user2 = User.create(name: 'Dave', email: 'dave@example.com', password: 'topsecret')
+    @user1 = User.create(name: 'Yesuf', email: 'yesuf023@example.com', password: 'yessecret')
+    @user2 = User.create(name: 'Ometman', email: 'omet@example.com', password: 'yessecret')
 
     @user1.confirm
     @user2.confirm
     sleep(1)
 
     visit new_user_session_path
-    fill_in 'Email', with: 'lily@example.com'
-    fill_in 'Password', with: 'topsecret'
+    fill_in 'Email', with: 'yesuf023@example.com'
+    fill_in 'Password', with: 'yessecret'
     click_button 'Log in'
     sleep(1)
 
