@@ -1,8 +1,8 @@
 class RecipeFoodsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user
-  before_action :set_recipe, only: [:create]
-  before_action :set_recipe_food, only: [:edit, :update, :destroy, :show]
+  before_action :set_recipe, only: %i[create]
+  before_action :set_recipe_food, only: %i[edit update destroy show]
 
   def index
     @recipe_foods = @user.recipe_foods.includes(:recipe, :food)
