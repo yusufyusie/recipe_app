@@ -7,7 +7,7 @@
 
 .food-table,
 .btn-container {
-  width: 50%;
+  width: 68%;
   margin: 0 auto;
   text-align: left;
   margin-bottom: 2%;
@@ -40,7 +40,7 @@
 }
 
 .food-table td:nth-child(2) { /* Second column (Measurement Unit) */
-  width: 30%;
+  width: 22%;
 }
 
 .food-table td:nth-child(3) { /* Third column (Unit Price) */
@@ -48,11 +48,20 @@
 }
 
 .food-table td:nth-child(4) { /* Fourth column (Actions) */
-  width: 15%;
+  width: 30%;
 }
 
 .new-food-btn {
   box-shadow: 4px 4px 6px #888;
   text-decoration: none;
   padding: 2px;
+}
+
+.recipe_actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20rem;
+  margin-right: 6.5rem;
+  padding-right: 1rem;
 }

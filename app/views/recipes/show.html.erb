@@ -23,16 +23,17 @@
   </div>
 
   <% if current_user == @recipe.user %>
-    <div id="recipe_actions" class="mb-4">
-      <%= link_to "Generate Shopping List", shopping_lists_path, class: "btn btn-success mr-2" %>
-       <%= link_to 'Add New Ingredient', new_user_recipe_recipe_food_path(@user, @recipe.id), class: 'btn btn-primary' %>
+    <div id="recipe_actions" class="recipe_actions mb-4">
+     <%= link_to "Back to recipes", user_recipes_path(current_user), class: "back-link" %>
+      <%= link_to "Generate Shopping List", shopping_lists_path, class: "btn back-link mr-2" %>
+       <%= link_to 'Add New Ingredient', new_user_recipe_recipe_food_path(@user, @recipe.id), class: 'btn back-link' %>
     </div>
   <% end %>
 <div id="recipe_foods" class="card mb-4 recipe-details-card mx-auto">
-  <div class="card-body">
+  <div class="food-form-container">
     <h2>Ingredients</h2>
-    <table class="table">
-      <thead class="thead-light">
+    <table class="food-table">
+      <thead class="food-table-head">
         <tr>
           <th>Food</th>
           <th>Quantity</th>
@@ -42,13 +43,13 @@
       </thead>
       <tbody>
         <% @recipe.recipe_foods.each do |recipe_food| %>
-          <tr class='ingredient'>
+          <tr class="<%= cycle('food-odd-row', 'food-even-row') %>">
             <td><%= recipe_food.food.name %></td>
             <td><%= recipe_food.quantity %></td>
             <td><%= (recipe_food.food.price || 0) * (recipe_food.quantity || 0) %></td>
             <td>
-              <%= link_to "Edit", edit_user_recipe_recipe_food_path(@recipe.user, @recipe, recipe_food), class: "btn btn-warning btn-sm" %>
-              <%= link_to "Delete", user_recipe_recipe_food_path(@recipe.user, @recipe, recipe_food), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %>
+              <%= link_to "Modify", edit_user_recipe_recipe_food_path(@recipe.user, @recipe, recipe_food), class: "btn btn-warning btn-sm" %>
+              <%= link_to "Remove", user_recipe_recipe_food_path(@recipe.user, @recipe, recipe_food), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %>
             </td>
           </tr>
         <% end %>
@@ -56,6 +57,4 @@
     </table>
   </div>
 </div>
-
-  <%= link_to "Back to recipes", user_recipes_path(current_user), class: "back-link" %>
 </div>
