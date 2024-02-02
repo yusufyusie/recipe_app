@@ -1,25 +1,35 @@
 <div class="container mt-5">
   <h1 class="text-center">Your Shopping Lists</h1>
 
-  <div class="row">
-    <% @ingredients.each do |food_name, ingredients| %>
-      <div class="col-md-4">
-        <div class="card mb-4 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title"><%= food_name %></h5>
-            <p class="card-text">Total quantity required: <%= ingredients.map(&:quantity).compact.sum %></p>
-            <p class="card-text">Missing quantity: <%= @missing_numbers[food_name] %></p>
-            <p class="card-text">Price per unit: <%= ingredients.first.food.price %></p>
-            <p class="card-text">Total price: <%= ingredients.first.food.price * @missing_numbers[food_name] %></p>
-          </div>
-        </div>
-      </div>
-    <% end %>
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">Food Name</th>
+          <th scope="col">Total Quantity Required</th>
+          <th scope="col">Missing Quantity</th>
+          <th scope="col">Price per Unit</th>
+          <th scope="col">Total Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @ingredients.each do |food_name, ingredients| %>
+          <tr>
+            <td><%= food_name %></td>
+            <td><%= ingredients.map(&:quantity).compact.sum %></td>
+            <td><%= @missing_numbers[food_name] %></td>
+            <td><%= ingredients.first.food.price %></td>
+            <td><%= ingredients.first.food.price * @missing_numbers[food_name] %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 
   <div class="row">
     <div class="col-md-12">
-      <h4 class="text-right">Total price of all missing ingredients: <%= @total_price %></h4>
+      <h4 class="text-center">Total price of all missing ingredients: <%= @total_price %></h4>
     </div>
   </div>
 </div>
+
