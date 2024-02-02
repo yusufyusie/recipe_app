@@ -1,4 +1,5 @@
-.food-form-container {
+.food-index-container,
+.recipe-show-container {
   display: block;
   width: 100%;
   text-align: center;

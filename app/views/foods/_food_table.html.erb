@@ -1,0 +1,22 @@
+
+<div class="food-index-container">
+  <h1 class="mb-4">My Foods</h1>
+  <div class="btn-container">
+    <%= link_to 'New Food', new_user_food_path(current_user), class: 'btn btn-primary mb-3 new-food-btn float-right' %>
+  </div>
+  <table class="food-table">
+    <thead class="food-table-head">
+      <tr>
+        <th>Food</th>
+        <th>Measurement Unit</th>
+        <th>Unit Price</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @foods.each do |food| %>
+        <%= render partial: 'food_row', locals: { food: food, current_user: current_user } %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
