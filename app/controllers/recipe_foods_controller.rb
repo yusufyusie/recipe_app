@@ -5,7 +5,8 @@ class RecipeFoodsController < ApplicationController
   before_action :set_recipe_food, only: %i[edit update destroy show]
 
   def index
-    @recipe_foods = @user.recipe_foods.includes(:recipe, :food)
+    @recipe = @user.recipes.find(params[:recipe_id])
+    @recipe_foods = @recipe.recipe_foods.includes(:food)
   end
 
   def new
