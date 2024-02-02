@@ -12,6 +12,15 @@
 # the additional setup, and require it from the spec files that actually need
 # it.
 #
+require 'rails_helper'
+require 'capybara/rails'
+require 'capybara/rspec'
+
+Capybara.register_driver :selenium do |app|
+  Capybara::Selenium::Driver.new(app, browser: :chrome)
+end
+
+Capybara.javascript_driver = :selenium
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
