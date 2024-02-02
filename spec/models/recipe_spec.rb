@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Recipe, type: :model do
   let(:user) { create(:user) }
-  let(:recipe) { build(:recipe, user: user) }
+  let(:recipe) { build(:recipe, user:) }
 
   describe 'associations' do
     it { should belong_to(:user) }
