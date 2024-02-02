@@ -1,6 +1,9 @@
 <div class="container mt-5">
   <h1 class="text-center">Your Shopping Lists</h1>
-
+<div class="ingredient-info text-center">
+  <h4>Amount of Food items to buy: <%= @ingredients.length %> </h4>
+  <h4>Total value of Food needed: <%= number_to_currency(@total_price) %> </h4>
+</div>
   <div class="table-responsive">
     <table class="table table-bordered table-hover">
       <thead class="thead-light">
