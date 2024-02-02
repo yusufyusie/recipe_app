@@ -8,15 +8,21 @@
       </tr>
     </thead>
     <tbody>
-      <% @foods.each do |food| %>
+    <% if @foods.present? %>
+        <% @foods.each do |food| %>
         <tr class="<%= cycle('food-odd-row', 'food-even-row') %>">
             <td><%= food.name %></td>
             <td><%= food.measurement_unit %></td>
             <td><%= number_to_currency(food.price / food.quantity) %></td>
             <td>
-                <%= button_to 'Delete', user_food_path(current_user, food), method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= button_to 'Delete', user_food_path(current_user, food), method: :delete, data: { confirm: 'Are you sure?' } %>
             </td>
         </tr>
-      <% end %>
+    <% end %>
+    <% else %>
+        <tr>
+        <td colspan="4" class="text-center">Sorry, no food for this recipe.</td>
+        </tr>
+    <% end %>
     </tbody>
   </table>

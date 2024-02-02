@@ -1,3 +1,8 @@
-
-<%= render partial: 'recipe_details' %>
-<%= render partial: 'foods/food_table', locals: { foods: @foods, current_user: current_user } %>
+<div class="recipe-show-container">
+  <div>
+    <%= render partial: 'recipe_details' %>
+  </div>
+  <div>
+    <%= render partial: 'food_table', locals: { foods: @foods, current_user: current_user } %>
+  </div>
+</div>

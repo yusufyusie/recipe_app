@@ -8,11 +8,9 @@ class RecipesController < ApplicationController
   end
 
   def show
-    # @foods = @user.foods.includes(recipe_foods: :recipe)
-    # @foods = @recipe.foods
-    # @recipe = Recipe.find(params[:id])
+    # @foods = @recipe.foods.includes(recipe_foods: :recipe)
     @recipe = Recipe.find(params[:id])
-    @foods = @recipe.foods.includes(recipe_foods: :recipe)
+    @foods = @recipe.foods.includes(:recipe_foods)
   end
 
   def new

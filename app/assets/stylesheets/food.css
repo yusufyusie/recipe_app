@@ -1,5 +1,4 @@
-.food-index-container,
-.recipe-show-container {
+.food-form-container {
   display: block;
   width: 100%;
   text-align: center;
@@ -8,7 +7,8 @@
 
 .food-table,
 .btn-container {
-  width: 50%;
+  max-width: 980px;
+  width: 100%;
   margin: 0 auto;
   text-align: left;
   margin-bottom: 2%;

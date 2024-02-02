@@ -1,4 +1,9 @@
-
-<%= render partial: 'food_table', locals: { foods: @foods, current_user: current_user } %>
+<div class="container">
+  <h1 class="mb-4">My Foods</h1>
+  <div class="btn-container">
+    <%= link_to 'New Food', new_user_food_path(current_user), class: 'btn btn-primary mb-3 new-food-btn float-right' %>
+  </div>
+  <%= render partial: 'food_table', locals: { foods: @foods, current_user: current_user } %>
+</div>
 
 
