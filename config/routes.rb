@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   authenticate :user do
     resources :users do
       resources :recipes do
-        resources :recipe_foods, only: [:new, :create, :edit, :update, :destroy]
+        resources :recipe_foods, only: [:index, :new, :create, :edit, :update, :destroy]
       end
       resources :foods do
         resources :recipe_foods, except: [:index, :new, :create]
@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   end
 
   resources :foods, only: [:new, :create]
-  
+
   resources :shopping_lists, only: [:index]
 
   get 'public_recipes', to: 'recipes#public_recipes'
