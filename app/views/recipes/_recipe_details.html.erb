@@ -2,31 +2,30 @@
 <div class="container">
   <h1><%= @recipe.name %></h1>
   <% if current_user == @recipe.user %>
-  <div class="card mb-4 recipe-details-card mx-auto">
-    <div class="card-body">
-      <div class="rect d-flex justify-content-between">
-        <div class="paragraph">
-          <p><span>Preparation time: </span><%= @recipe.preparation_time %> minutes</p>
-          <p><span>Cooking time: </span><%= @recipe.cooking_time %> minutes</p>
-          <p class="description-text"><span>Description: </span><%= @recipe.description %></p>
-        </div>
-        <div class="public">
-          <%= form_with(model: [current_user, @recipe], method: :patch, local: true) do |form| %>
-            <% if user_signed_in? && current_user == @recipe.user %>
-              <div class="mb-3 form-check">
-                <%= form.label :public, style: "display: block", class: "form-check-label" %>
-                <%= form.check_box :public, onchange: "this.form.submit()", class: "form-check-input" %>
-              </div>
+    <div class="card mb-4 recipe-details-card mx-auto">
+      <div class="card-body">
+        <div class="rect d-flex justify-content-between">
+          <div class="paragraph">
+            <p><span>Preparation time: </span><%= @recipe.preparation_time %> minutes</p>
+            <p><span>Cooking time: </span><%= @recipe.cooking_time %> minutes</p>
+            <p class="description-text"><span>Description: </span><%= @recipe.description %></p>
+          </div>
+          <div class="public">
+            <%= form_with(model: [current_user, @recipe], method: :patch, local: true) do |form| %>
+              <% if user_signed_in? && current_user == @recipe.user %>
+                <div class="mb-3 form-check">
+                  <%= form.label :public, style: "display: block", class: "form-check-label" %>
+                  <%= form.check_box :public, onchange: "this.form.submit()", class: "form-check-input" %>
+                </div>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="btns-container">
-      <%= link_to 'Generate Shopping List', new_user_food_path(current_user), class: 'btn btn-primary mb-3 new-food-btn float-left' %>
-      <%= link_to 'Add New Food', new_user_food_path(current_user), class: 'btn btn-primary mb-3 new-food-btn float-right' %>
+      <div class="btns-container">
+        <%= link_to 'Generate Shopping List', new_user_food_path(current_user), class: 'btn btn-primary mb-3 new-food-btn float-left' %>
+        <%= link_to 'Add Recipe Food', new_user_recipe_recipe_food_path(current_user, recipe_id: @recipe.id), class: 'btn btn-primary mb-3 new-food-btn float-right' %>
+      </div>
     </div>
   <% end %>
 </div>
-
-

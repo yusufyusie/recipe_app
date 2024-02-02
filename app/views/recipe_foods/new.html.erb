@@ -1,26 +1,22 @@
-<!-- app/views/recipe_foods/new.html.erb -->
+<h1 class="text-center">Create a New Recipe Food</h1>
 
-<h1>Create a New Recipe Food</h1>
-
-<%= form_with(model: [@user, @recipe_food], url: user_recipe_foods_path(@user), local: true) do |form| %>
-  <div>
+<%= form_with(model: [@user, @recipe_food], url: new_recipe_foods_path(@user), local: true, html: { class: 'recipe-food-form' }) do |form| %>
+  <div class="form-group">
     <%= form.label :quantity %>
     <%= form.number_field :quantity %>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= form.label :recipe_id %>
-    <%= form.collection_select(:recipe_id, @user.recipes, :id, :name, prompt: 'Select a Recipe') %>
+    <%= form.collection_select(:recipe_id, @user.recipes, :id, :name, { prompt: 'Select a Recipe' }, { class: 'form-control' }) %>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= form.label :food_id %>
-    <%= form.collection_select(:food_id, @user.foods, :id, :name, prompt: 'Select a Food') %>
+    <%= form.collection_select(:food_id, @user.foods, :id, :name, { prompt: 'Select a Food' }, { class: 'form-control' }) %>
   </div>
 
-  <div>
-    <%= form.submit "Create Recipe Food" %>
+  <div class="form-group">
+    <%= form.submit "Create Recipe Food", class: 'btn btn-primary' %>
   </div>
 <% end %>
-
-<%= link_to "Back to Recipe Foods List", user_recipe_foods_path(@user) %>
