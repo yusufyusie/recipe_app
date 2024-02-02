@@ -11,9 +11,9 @@ body {
   background-color: $light-color;
   color: $dark-color;
   height: 100vh;
-  line-height: 1.7;
+  line-height: 1.5;
   padding: 1em;
-  margin: 1em;
+  margin: 0.125em;
 }
 
 h1,
@@ -182,33 +182,13 @@ input[type="password"] {
 }
 
 .auth-link-item {
-  color: $dark-color;
+  color: $primary-color;
+  font-weight: 600;
+  padding: 2px;
 
-  a {
-    color: $primary-color;
-    text-decoration: none;
-    font-weight: 600;
-    padding: 2px;
-    border-bottom: 2px solid $primary-color;
-
-    &:hover {
-      color: darken($primary-color, 10%);
-      border-bottom: 2px solid darken($primary-color, 10%);
-      transition: all 0.3s ease;
-    }
-  }
-
-  button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #3498db;
-    color: #fff;
-    cursor: pointer;
-
-    &:hover {
-      background-color: darken($primary-color, 10%);
-    }
+  &:hover {
+    color: darken($primary-color, 10%);
+    transition: all 0.3s ease;
   }
 }
 
@@ -410,8 +390,8 @@ input[type="password"] {
   font-weight: bold;
   cursor: pointer;
   display: block;
-margin-left: auto;
-margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .btnn-primary:hover {
@@ -504,5 +484,3 @@ span {
     color: #fff;
   }
 }
-
-
