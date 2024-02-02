@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Recipe, type: :model do
-  let(:user) { create(:user) } # Assuming you have a user factory
-  let(:recipe) { build(:recipe, user: user) } # Assuming you have a recipe factory
+  let(:user) { create(:user) }
+  let(:recipe) { build(:recipe, user: user) }
 
   describe 'associations' do
     it { should belong_to(:user) }
