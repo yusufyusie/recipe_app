@@ -80,3 +80,5 @@ group :test do
   gem 'shoulda-matchers', '~> 4.0'
   gem 'rspec_junit_formatter'
 end
+
+gem 'fuubar'

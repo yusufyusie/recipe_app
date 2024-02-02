@@ -120,6 +120,9 @@ GEM
     execjs (2.9.1)
     ffi (1.16.3)
     ffi (1.16.3-x64-mingw-ucrt)
+    fuubar (2.5.1)
+      rspec-core (~> 3.0)
+      ruby-progressbar (~> 1.4)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.1)
@@ -344,6 +347,7 @@ DEPENDENCIES
   capybara
   debug
   devise
+  fuubar
   importmap-rails
   jbuilder
   jquery-rails
