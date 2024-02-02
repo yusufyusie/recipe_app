@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Recipe Foods</h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Recipe</th>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @recipe_foods.each do |recipe_food| %>
+        <tr>
+          <td><%= recipe_food.recipe.name %></td>
+          <td><%= recipe_food.food.name %></td>
+          <td><%= recipe_food.quantity %></td>
+          <td>
+            <%= link_to 'Show', recipe_food, class: 'btn btn-primary btn-sm' %>
+            <%= link_to 'Edit', edit_recipe_food_path(recipe_food), class: 'btn btn-warning btn-sm' %>
+            <%= link_to 'Delete', recipe_food, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+            <%= link_to 'Modify Food', edit_user_food_path(current_user, recipe_food.food), class: 'btn btn-info btn-sm' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to 'New Recipe Food', new_user_recipe_food_path(current_user), class: 'btn btn-success' %>

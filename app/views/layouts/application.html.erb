@@ -19,13 +19,14 @@
               <li class="nav-item active">
               <a class="nav-link" href="<%= home_path %>">Home</a>
               </li>
-              
-              <li class="nav-item">
-                <a class="nav-link" href="<%= user_foods_path(current_user) %>">Foods</a>
-              </li>
-              
               <li class="nav-item">
                 <a class="nav-link" href="<%= user_recipes_path(current_user) %>">Recipes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<%= user_foods_path(current_user) %>">Foods</a>
+              </li>              
+              <li class="nav-item">
+                <a class="nav-link" href="<%= recipe_foods_path(current_user) %>">Recipe Foods</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="<%= public_recipes_path %>">Public recipe</a>

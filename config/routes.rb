@@ -15,13 +15,15 @@ end
   authenticate :user do
     resources :users do
       resources :recipes do
-        resources :recipe_foods, except: [:index, :new, :create]
+        resources :recipe_foods
       end
       resources :foods do
-        resources :recipe_foods, except: [:index, :new, :create]
+        resources :recipe_foods
       end
     end
   end
 
+  get 'recipes_foods', to: 'recipe_foods#index'
+  get 'foods', to: 'foods#index', as: :foods
   get 'public_recipes', to: 'recipes#public_recipes'
 end
