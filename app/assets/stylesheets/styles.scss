@@ -11,7 +11,9 @@ body {
   background-color: $light-color;
   color: $dark-color;
   height: 100vh;
-  line-height: 1.7;
+  line-height: 1.5;
+  padding: 1em;
+  margin: 0.125em;
 }
 
 h1,
@@ -32,7 +34,7 @@ h2 {
 
 p {
   text-align: center;
-  font-size: 1.2em;
+  font-size: 1.4em;
   margin-bottom: 2em;
 }
 
@@ -51,6 +53,7 @@ p {
 
     &:hover {
       background-color: $secondary-color;
+      transition: all 0.3s ease;
     }
   }
 }
@@ -85,23 +88,24 @@ p {
   &:hover {
     text-decoration: underline;
     color: darken($primary-color, 10%);
+    transition: all 0.3s ease;
   }
 }
 
 form {
   max-width: 500px;
-  max-height: 75vh; /* Set maximum height to 80% of the viewport height */
+  max-height: 75vh;
   margin: 0 auto;
   padding: 0.5em;
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  overflow: auto; /* Add scroll if content exceeds max-height */
+  overflow: auto;
 }
 
 label {
   display: block;
-  margin-bottom: 0.01em; /* Reduce margin */
+  margin-bottom: 0.01em;
   color: $dark-color;
   font-weight: bold;
 }
@@ -110,11 +114,11 @@ input[type="text"],
 input[type="email"],
 input[type="password"] {
   width: 90%;
-  padding: 0.01em; /* Reduce padding */
+  padding: 0.01em;
   border: 1px solid $border-color;
   border-radius: 5px;
-  font-size: 0.775em; /* Reduce font size */
-  margin-bottom: 0.01em; /* Further reduce margin */
+  font-size: 0.775em;
+  margin-bottom: 0.01em;
 
   &:focus {
     border-color: $primary-color;
@@ -132,9 +136,9 @@ input[type="password"] {
 
 .error-message {
   color: $error-color;
-  font-size: 0.75em; /* Reduce font size */
-  margin-top: -0.375em; /* Reduce margin */
-  margin-bottom: 0.5em; /* Reduce margin */
+  font-size: 0.75em;
+  margin-top: -0.375em;
+  margin-bottom: 0.5em;
 }
 
 .actions {
@@ -142,10 +146,10 @@ input[type="password"] {
   justify-content: center;
 
   input[type="submit"] {
-    margin-top: 0.25em; /* Reduce margin */
-    padding: 0.25em 0.5em; /* Reduce padding */
+    margin-top: 0.25em;
+    padding: 0.25em 0.5em;
     color: #fff;
-    font-size: 1.25rem; /* Reduce font size */
+    font-size: 1.25rem;
     background-color: #007bff;
     border: none;
     border-radius: 5px;
@@ -154,6 +158,7 @@ input[type="password"] {
 
     &:hover {
       background-color: #0056b3;
+      transform: scale(1.02);
     }
   }
 }
@@ -177,32 +182,13 @@ input[type="password"] {
 }
 
 .auth-link-item {
-  color: $dark-color;
+  color: $primary-color;
+  font-weight: 600;
+  padding: 2px;
 
-  a {
-    color: $primary-color;
-    text-decoration: none;
-    font-weight: 600;
-    padding: 2px;
-    border-bottom: 2px solid $primary-color;
-
-    &:hover {
-      color: darken($primary-color, 10%);
-      border-bottom: 2px solid darken($primary-color, 10%);
-    }
-  }
-
-  button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #3498db;
-    color: #fff;
-    cursor: pointer;
-
-    &:hover {
-      background-color: darken($primary-color, 10%);
-    }
+  &:hover {
+    color: darken($primary-color, 10%);
+    transition: all 0.3s ease;
   }
 }
 
@@ -241,10 +227,17 @@ input[type="password"] {
   list-style-type: none;
 }
 
-.custom-img {
-  object-fit: cover;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card-img-top {
   width: 100%;
   height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .recipe-card {
@@ -253,6 +246,37 @@ input[type="password"] {
   max-width: 800px;
   padding: 20px;
   margin: 1rem auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.recipe-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card-name {
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.card-text {
+  color: #777;
+  line-height: 1.6;
+}
+
+.btn-outline-secondary {
+  color: #333;
+  border-color: #333;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #333;
+  color: #fff;
 }
 
 .rect {
@@ -292,6 +316,7 @@ input[type="password"] {
 
   &:hover {
     background-color: #0056b3;
+    transition: all 0.3s ease;
   }
 
   &:active {
@@ -326,7 +351,7 @@ input[type="password"] {
 .form-container {
   max-width: 600px;
   margin: 0 auto;
-  padding: 5px;
+  padding: 2px;
   background-color: #f7f7f7;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
@@ -334,7 +359,7 @@ input[type="password"] {
 
 .form-container h1 {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   color: #333;
 }
 
@@ -356,19 +381,23 @@ input[type="password"] {
 }
 
 .btnn-primary {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
+  color: #fff;
   background-color: #007bff;
-  color: white;
+  border-color: #007bff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .btnn-primary:hover {
-  background-color: #0056b3;
+  background-color: $primary-color;
+  border-color: $secondary-color;
+  transition: all 0.3s ease;
 }
 
 .auth-container {
@@ -378,7 +407,7 @@ input[type="password"] {
   justify-content: center;
   gap: 20px;
   width: 20%;
-  padding: 2em;
+  padding: 20px 0;
   text-align: center;
   font-weight: 600;
   font-size: 1.5em;
@@ -409,6 +438,7 @@ input[type="password"] {
 
   &:hover {
     background-color: #0056b3;
+    transition: all 0.3s ease;
   }
 
   &:active {
@@ -422,4 +452,35 @@ span {
   margin-bottom: 10px;
   font-weight: bold;
   align-items: flex-start;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #333;
+
+  a {
+    color: #007bff;
+    text-decoration: underline;
+
+    &:hover {
+      color: #0056b3;
+      text-decoration: underline;
+    }
+  }
+}
+
+.btn-danger-no-bg {
+  background-color: transparent;
+  border-color: #dc3545;
+  color: #dc3545;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+
+  &:hover,
+  &:focus {
+    background-color: #dc3545;
+    color: #fff;
+  }
 }
