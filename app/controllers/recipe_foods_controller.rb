@@ -15,10 +15,11 @@ class RecipeFoodsController < ApplicationController
   end
 
   def create
-    @recipe_food = @recipe.recipe_foods.build(recipe_food_params)
+    @recipe_food = @recipe.recipe_foods.new(recipe_food_params)
+
     if @recipe_food.save
       flash[:success] = 'Ingredient added successfully!'
-      redirect_to recipe_path(@recipe)
+      redirect_to user_recipe_path(@user, @recipe)
     else
       flash.now[:error] = 'Error: ingredient could not be added!'
       render :new
