@@ -3,13 +3,13 @@ require 'rails_helper'
 RSpec.describe 'Adding a new ingredient to a recipe', type: :feature do
   before(:each) do
     User.delete_all
-    @user = User.create(name: 'Tom', email: 'tom@example.com', password: 'topsecret')
+    @user = User.create(name: 'Yesuf', email: 'yesuf023@example.com', password: 'yessecret')
     @user.confirm
     sleep(1)
 
     visit new_user_session_path
-    fill_in 'Email', with: 'tom@example.com'
-    fill_in 'Password', with: 'topsecret'
+    fill_in 'Email', with: 'yesuf023@example.com'
+    fill_in 'Password', with: 'yessecret'
     click_button 'Log in'
     sleep(1)
 
