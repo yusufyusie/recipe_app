@@ -1,5 +1,4 @@
-<!-- app/views/foods/new.html.erb -->
-
+<% if can?(:create, Food) %>
 <h1>Create a New Food</h1>
 
 <%= form_with(model: [@user, @food], url: user_foods_path(@user), local: true) do |form| %>
@@ -26,6 +25,7 @@
   <div>
     <%= form.submit "Create Food" %>
   </div>
+<% end %>
 <% end %>
 
 <%= link_to "Back to Food List", user_foods_path(@user) %>
