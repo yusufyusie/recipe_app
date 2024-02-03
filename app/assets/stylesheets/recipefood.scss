@@ -23,13 +23,15 @@
     background-color: rgba(0,0,0,.075);
   }
 
-// Ingredients
-  .recipe_actions {
+// Ingredients table
+  #recipe_actions {
     display: flex;
     justify-content: center;
     gap: 20%;
     margin-right: 1rem;
     padding: 0.25rem;
+    position: sticky;
+    top: 0;
   }
 
   .ingredient-info {
@@ -65,6 +67,33 @@
     background-color: rgba(0,0,0,.075);
   }
 
+  .button-cell {
+    width: 1%; /* This will make the cell as small as possible, while still fitting its content */
+    white-space: nowrap; /* This will prevent the cell's content from wrapping to a new line */
+  }
+
+  .button-group {
+    display: flex;
+    justify-content: flex-end !important; /* This will align the buttons to the end of the cell */
+    align-items: center;
+    width: auto !important; /* This will make the container only as wide as the content inside it */
+  }
+  
+  .button-group form {
+    display: inline-block;
+    margin: 0;
+    align-items: end;
+  }
+
+  .remove-button {
+    width: 70px; /* Adjust this value as needed */
+    height: 30px; /* Adjust this value as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+
 
 // Recipes Ingredients form
   .new-ingredient-form {
@@ -90,3 +119,5 @@
   .btn {
     padding: 10px 20px;
   }
+
+  

@@ -4,9 +4,9 @@
     <div class="card-body">
       <div class="rect d-flex justify-content-between">
         <div class="paragraph">
-          <p><span>Preparation time: </span><%= @recipe.preparation_time %> minutes</p>
-          <p><span>Cooking time: </span><%= @recipe.cooking_time %> minutes</p>
-          <p class="description-text"><span>Description: </span><%= @recipe.description %></p>
+          <p class="recipe-info"><span>Preparation time: </span><%= @recipe.preparation_time %> minutes</p>
+          <p class="recipe-info"><span>Cooking time: </span><%= @recipe.cooking_time %> minutes</p>
+          <p class="recipe-info description-text"><span>Description: </span><%= @recipe.description %></p>
         </div>
         <div class="public">
           <%= form_with(model: [current_user, @recipe], method: :patch, local: true) do |form| %>
@@ -48,9 +48,11 @@
             <td><%= recipe_food.food.name %></td>
             <td><%= recipe_food.quantity %></td>
             <td><%= (recipe_food.food.price || 0) * (recipe_food.quantity || 0) %></td>
-            <td>
-              <%= link_to "Modify", edit_user_recipe_recipe_food_path(@recipe.user, @recipe, recipe_food), class: "btn btn-warning btn-sm" %>
-              <%= link_to "Remove", user_recipe_recipe_food_path(@recipe.user, @recipe, recipe_food), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %>
+           <td class="button-cell">
+              <div class="button-group">
+                <%= link_to "Modify", edit_user_recipe_recipe_food_path(@recipe.user, @recipe, recipe_food), class: "btn btn-warning btn-sm" %>
+                <%= button_to "Remove", user_recipe_recipe_food_path(@recipe.user, @recipe, recipe_food), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm remove-button" %>
+              </div>
             </td>
           </tr>
         <% end %>
