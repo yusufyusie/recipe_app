@@ -30,7 +30,7 @@ RSpec.describe 'When I open the edit ingredient page', type: :feature do
   end
 
   it 'displays a dropdown with the names of the user\'s foods' do
-    expect(page).to have_select('Food', options: ['Apple', 'Pear'])
+    expect(page).to have_select('Food', options: %w[Apple Pear])
   end
 
   it 'displays an Update button' do

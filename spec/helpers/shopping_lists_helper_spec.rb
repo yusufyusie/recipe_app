@@ -11,5 +11,11 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe ShoppingListsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe '#some_method' do
+    it "does what it's supposed to do" do
+      # Setup
+      # Exercise
+      # Verify
+    end
+  end
 end
