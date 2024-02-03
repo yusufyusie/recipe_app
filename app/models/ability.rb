@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
@@ -9,6 +7,8 @@ class Ability
     return unless user.present?
 
     can :manage, Recipe, user_id: user.id
+
+    # Define abilities for the user here. For example:
     #
     #   return unless user.present?
     #   can :read, :all

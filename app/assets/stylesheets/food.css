@@ -40,7 +40,7 @@
 }
 
 .food-table td:nth-child(2) { /* Second column (Measurement Unit) */
-  width: 30%;
+  width: 15%;
 }
 
 .food-table td:nth-child(3) { /* Third column (Unit Price) */
@@ -48,7 +48,7 @@
 }
 
 .food-table td:nth-child(4) { /* Fourth column (Actions) */
-  width: 15%;
+  width: 30%;
 }
 
 .new-food-btn {

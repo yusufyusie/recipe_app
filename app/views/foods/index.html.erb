@@ -18,9 +18,12 @@
         <td><%= food.name %></td>
         <td><%= food.measurement_unit %></td>
         <td><%= number_to_currency(food.price / food.quantity) %></td>
-        <td>
-          <%= link_to 'Delete', user_food_path(current_user, food), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+        <td class="button-cell">
+          <div class="button-group">
+          <%= button_to "Delete", user_food_path(current_user, food), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-sm remove-button" %>
+        </div>
         </td>
+      </tr>
       </tr>
     <% end %>
     
