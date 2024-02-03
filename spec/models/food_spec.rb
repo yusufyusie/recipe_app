@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Food, type: :model do
   before(:each) do
-    @user = User.create(name: 'Tom', email: 'tommy@example.com', password: 'topsecret')
+    @user = User.create(name: 'Yesuf', email: 'yesuf023@example.com', password: 'yessecret')
     @food = Food.new(
       name: 'Apple',
       measurement_unit: 'kg',
