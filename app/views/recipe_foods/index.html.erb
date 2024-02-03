@@ -1,0 +1,7 @@
+<h1>Recipe Foods</h1>
+
+<ul>
+  <% @recipe_foods.each do |recipe_food| %>
+    <li><%= recipe_food.food.name %> - <%= recipe_food.quantity %></li>
+  <% end %>
+</ul>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="rspec" tests="5" skipped="1" failures="0" errors="0" time="0.414456" timestamp="2024-02-02T08:07:59+03:00" hostname="Yesuf-Pc">
+<properties>
+<property name="seed" value="6326"/>
+</properties>
+<testcase classname="spec.models.recipe_spec" name="Recipe add some examples to (or delete) D:/Microverse/Module5/recipe_app/spec/models/recipe_spec.rb" file="./spec/models/recipe_spec.rb" time="0.000028"><skipped/></testcase>
+<testcase classname="spec.models.user_spec" name="User is valid with valid attributes" file="./spec/models/user_spec.rb" time="0.394820"></testcase>
+<testcase classname="spec.models.user_spec" name="User is not valid without a name" file="./spec/models/user_spec.rb" time="0.003323"></testcase>
+<testcase classname="spec.models.user_spec" name="User is not valid without an email" file="./spec/models/user_spec.rb" time="0.001903"></testcase>
+<testcase classname="spec.models.user_spec" name="User is not valid without a password" file="./spec/models/user_spec.rb" time="0.001298"></testcase>
+</testsuite>

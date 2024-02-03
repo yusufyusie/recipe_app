@@ -165,7 +165,7 @@ Open [http://localhost:1080](http://localhost:1080) to view it in your browser.
 
 - GitHub: [@ometman](https://github.com/ometman)
 - LinkedIn: [in/ometman](https://www.linkedin.com/in/ometman)
-  
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 

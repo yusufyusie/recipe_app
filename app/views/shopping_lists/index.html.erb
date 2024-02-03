@@ -1,0 +1,37 @@
+<div class="container mt-5">
+   <h1 class="mt-4 mb-4 text-center">Shopping List</h1>
+<div class="ingredient-info text-center">
+   <p>Amount of Food items to buy: <%= @ingredients.length %> </p>
+    <p>Total value of Food needed: <%= number_to_currency(@total_price) %> </p>
+</div>
+  <div class="table-responsive">
+  <table class="food-table">
+    <thead class="food-table-head">
+        <tr>
+          <th>Food</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+       <tbody>
+      <% @ingredients.each do |food_name, ingredients| %>
+        <% ingredients.each do |ingredient| %>
+           <tr class="<%= cycle('food-odd-row', 'food-even-row') %>">
+            <td><%= food_name %></td>
+            <td><%= @missing_numbers[food_name] %> <%= ingredient.food.measurement_unit %> </td>
+            <td><%= number_to_currency(ingredient.food.price * @missing_numbers[food_name]) %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+    </table>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h4 class="text-center">Total price of all missing ingredients: <%= @total_price %></h4>
+    </div>
+  </div>
+</div>
+   <%= link_to 'Back to ingredients', :back, fallback_location: root_path %>
+
