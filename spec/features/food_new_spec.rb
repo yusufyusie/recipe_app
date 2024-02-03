@@ -27,4 +27,14 @@ RSpec.feature 'Add New Food', type: :feature do
     click_button 'Create Food'
     expect(Food.count).to eq(existing_food_count)
   end
+
+  private
+
+  def log_in_user(email, password)
+    visit new_user_session_path
+    fill_in 'Email', with: email
+    fill_in 'Password', with: password
+    click_button 'Log in'
+    sleep(1)
+  end
 end
