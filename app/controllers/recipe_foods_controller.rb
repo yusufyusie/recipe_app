@@ -39,11 +39,11 @@ class RecipeFoodsController < ApplicationController
     end
   end
 
- def destroy
-  @recipe_food.destroy!
-  flash[:success] = 'Ingredient was deleted successfully!'
-  redirect_to user_recipe_path(@recipe.user, @recipe)
-end
+  def destroy
+    @recipe_food.destroy!
+    flash[:success] = 'Ingredient was deleted successfully!'
+    redirect_to user_recipe_path(@recipe.user, @recipe)
+  end
 
   private
 
