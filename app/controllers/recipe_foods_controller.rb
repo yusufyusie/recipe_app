@@ -1,23 +1,28 @@
-# app/controllers/recipe_foods_controller.rb
-
 class RecipeFoodsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user
-  before_action :set_recipe_food, only: %i[show edit update destroy]
+  before_action :set_recipe, only: %i[create]
+  before_action :set_recipe_food, only: %i[edit update destroy show]
 
   def index
-    @recipe_foods = @user.recipe_foods.includes(:recipe, :food)
+    @recipe = @user.recipes.find(params[:recipe_id])
+    @recipe_foods = @recipe.recipe_foods.includes(:food)
   end
 
   def new
-    @recipe_food = @user.recipe_foods.build
+    @user = User.find(params[:user_id])
+    @recipe = @user.recipes.find(params[:recipe_id])
+    @recipe_food = @recipe.recipe_foods.new
   end
 
   def create
-    @recipe_food = @user.recipe_foods.build(recipe_food_params)
+    @recipe_food = @recipe.recipe_foods.new(recipe_food_params)
+
     if @recipe_food.save
-      redirect_to recipe_foods_path, notice: 'Recipe food added successfully.'
+      flash[:success] = 'Ingredient added successfully!'
+      redirect_to user_recipe_path(@user, @recipe)
     else
+      flash.now[:error] = 'Error: ingredient could not be added!'
       render :new
     end
   end
@@ -28,15 +33,16 @@ class RecipeFoodsController < ApplicationController
 
   def update
     if @recipe_food.update(recipe_food_params)
-      redirect_to recipe_foods_path, notice: 'Recipe food updated successfully.'
+      redirect_to user_recipe_path(@recipe.user, @recipe), notice: 'Ingredient was successfully updated.'
     else
       render :edit
     end
   end
 
   def destroy
-    @recipe_food.destroy
-    redirect_to recipe_foods_path, notice: 'Recipe food deleted successfully.'
+    @recipe_food.destroy!
+    flash[:success] = 'Ingredient was deleted successfully!'
+    redirect_to user_recipe_path(@recipe.user, @recipe)
   end
 
   private
@@ -45,11 +51,16 @@ class RecipeFoodsController < ApplicationController
     @user = current_user
   end
 
+  def set_recipe
+    @recipe = Recipe.find(params[:recipe_id])
+  end
+
   def set_recipe_food
-    @recipe_food = @user.recipe_foods.find(params[:id])
+    @recipe = Recipe.find(params[:recipe_id])
+    @recipe_food = @recipe.recipe_foods.find(params[:id])
   end
 
   def recipe_food_params
-    params.require(:recipe_food).permit(:quantity, :recipe_id, :food_id)
+    params.require(:recipe_food).permit(:quantity, :food_id)
   end
 end

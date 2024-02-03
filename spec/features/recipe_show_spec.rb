@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe 'When I open user show page', type: :feature do
+RSpec.describe 'When I open recipe show page', type: :feature do
   before(:each) do
     User.delete_all
-    @user = User.create(name: 'Yesuf', email: 'yesuf023@example.com', password: 'yessecret')
+    @user = User.create!(name: 'Yesuf', email: 'yesuf023@example.com', password: 'yessecret')
     @user.confirm
     sleep(1)
 
@@ -13,8 +13,8 @@ RSpec.describe 'When I open user show page', type: :feature do
     click_button 'Log in'
     sleep(1)
 
-    @recipe = Recipe.create(user: @user, name: 'Greek Salad', description: 'This is my favourite salad!',
-                            preparation_time: 2, cooking_time: 1)
+    @recipe = Recipe.create!(user: @user, name: 'Greek Salad', description: 'This is my favourite salad!',
+                             preparation_time: 2, cooking_time: 1)
     visit(user_recipe_path(@user, @recipe))
   end
 
@@ -38,18 +38,31 @@ RSpec.describe 'When I open user show page', type: :feature do
     expect(page).to have_content('This is my favourite salad!')
   end
 
-  it 'shows the Add New Food button' do
-    expect(page).to have_link('Add New Food', href: new_user_food_path(@user))
+  context 'shows correct links' do
+    it 'to Back to recipes' do
+      expect(page).to have_link('Back to recipes', href: user_recipes_path(@user))
+    end
+
+    it 'to Generate Shopping List' do
+      expect(page).to have_link('Generate Shopping List', href: shopping_lists_path)
+    end
+
+    it 'to Add New Ingredient' do
+      expect(page).to have_link('Add New Ingredient', href: new_user_recipe_recipe_food_path(@user, @recipe.id))
+    end
   end
 
-  it 'shows the Back to recipes link' do
-    expect(page).to have_link('Back to recipes', href: user_recipes_path(@user))
+  context 'When I click on Add New Ingredient' do
+    it 'redirects me to the form that adds new recipe_foods' do
+      click_link('Add New Ingredient')
+      expect(page).to have_current_path(new_user_recipe_recipe_food_path(@user, @recipe.id))
+    end
   end
 
-  context 'When I click on Add New Food' do
-    it 'redirects me to the form that adds new food' do
-      click_link('Add New Food')
-      expect(page).to have_current_path(new_user_food_path(@user))
+  context 'When I click on Generate Shopping List' do
+    it 'redirects me to the shopping list path' do
+      click_link('Generate Shopping List')
+      expect(page).to have_current_path(shopping_lists_path)
     end
   end
 
@@ -57,6 +70,16 @@ RSpec.describe 'When I open user show page', type: :feature do
     it 'redirects me to the user recipes path' do
       click_link('Back to recipes')
       expect(page).to have_current_path(user_recipes_path(@user))
+    end
+  end
+
+  context 'When I click on Modify button' do
+    it 'redirects me to the edit recipe_food path' do
+      food = Food.create!(name: 'Tomato', price: 1, user: @user)
+      @recipe_food = RecipeFood.create!(recipe: @recipe, food:, quantity: 1)
+      visit(user_recipe_path(@user, @recipe))
+      click_link('Modify')
+      expect(page).to have_current_path(edit_user_recipe_recipe_food_path(@user, @recipe, @recipe_food))
     end
   end
 end

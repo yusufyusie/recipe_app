@@ -9,16 +9,16 @@
             <p> By: <%= recipe.user.name %> </p>
           </div>
           <div class="food-data">
-            <p class="card-text description-text">Total food items:</p>
-            <p class="card-text description-text">Total price:</p>
+            <p class="card-text description-text">Total food items: <%= recipe.recipe_foods.length %></p>
+            <p class="card-text description-text">Total price: <%= recipe.recipe_foods.sum { |recipe_food| recipe_food.food.price && recipe_food.quantity ? recipe_food.food.price * recipe_food.quantity : 0 } %></p>
           </div>
-            <div class="delete-data">
-              <% if recipe.user == current_user %>
-             <%= form_with model: [recipe.user, recipe], method: :delete, class: 'd-inline' do |f| %>
-              <%= f.submit "Delete", data: { confirm: 'Are you sure?' }, class: 'btn btn-danger-no-bg mt-2' %>
+          <div class="delete-data">
+            <% if recipe.user == current_user %>
+              <%= form_with model: [recipe.user, recipe], method: :delete, class: 'd-inline' do |f| %>
+                <%= f.submit "Delete", data: { confirm: 'Are you sure?' }, class: 'btn btn-danger-no-bg mt-2' %>
+              <% end %>
             <% end %>
-          <% end %>
-            </div>
+          </div>
         </div>
       </div>
     </div>
