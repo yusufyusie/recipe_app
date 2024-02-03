@@ -1,17 +1,17 @@
 <h1 class="text-center">Add New Ingredient</h1>
 
 <%= form_with(model: [@user, @recipe, @recipe_food], url: user_recipe_recipe_foods_path(@user, @recipe), local: true, class: 'new-ingredient-form mx-auto') do |form| %>
-  <div class="new-ingredient-form-group">
+  <div class="form-group">
     <%= form.label :quantity %>
-    <%= form.number_field :quantity, min: 1, value: 1, required: true, step: 1, class: 'new-ingredient-form-control' %>
+    <%= form.number_field :quantity, min: 1, value: 1, required: true, step: 1, class: 'form-control' %>
   </div>
 
-  <div class="new-ingredient-form-group mt-2">
-    <%= form.label :food_id %>
-    <%= form.collection_select(:food_id, current_user.foods, :id, :name, { include_blank: false }, class: 'new-ingredient-form-control') %>
+  <div class="form-group mt-2">
+    <%= form.label :food_id, 'Food' %>
+    <%= form.collection_select(:food_id, current_user.foods, :id, :name, { include_blank: 'Select a food' }, class: 'form-control') %>
   </div>
 
-  <div class="new-ingredient-form-group mt-2 text-center">
+  <div class="form-group mt-2 text-center">
     <%= link_to "Add New Food", new_food_path, class: 'btn btn-primary mr-2' %>
     <%= form.submit "Add Ingredient", class: 'btn btn-success' %>
   </div>
@@ -20,4 +20,3 @@
 <div class="text-center mt-2">
   <%= link_to "Back to Recipe Foods List", user_recipe_recipe_foods_path(@user, @recipe), class: 'btn btn-secondary' %>
 </div>
-

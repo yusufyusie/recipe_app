@@ -5,6 +5,7 @@ class RecipeFoodsController < ApplicationController
   before_action :set_recipe_food, only: %i[edit update destroy show]
 
   def index
+    @recipe_foods = RecipeFood.all
     @recipe = @user.recipes.find(params[:recipe_id])
     @recipe_foods = @recipe.recipe_foods.includes(:food)
   end
@@ -16,13 +17,13 @@ class RecipeFoodsController < ApplicationController
   end
 
   def create
+    @user = User.find(params[:user_id])
+    @recipe = @user.recipes.find(params[:recipe_id])
     @recipe_food = @recipe.recipe_foods.new(recipe_food_params)
 
     if @recipe_food.save
-      flash[:success] = 'Ingredient added successfully!'
-      redirect_to user_recipe_path(@user, @recipe)
+      redirect_to user_recipe_recipe_food_path(@user, @recipe, @recipe_food)
     else
-      flash.now[:error] = 'Error: ingredient could not be added!'
       render :new
     end
   end
