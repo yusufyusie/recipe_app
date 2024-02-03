@@ -83,3 +83,6 @@ group :test do
 end
 
 gem 'fuubar'
+
+# Gemfile
+gem 'rails-controller-testing'
