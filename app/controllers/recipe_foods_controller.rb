@@ -3,6 +3,7 @@ class RecipeFoodsController < ApplicationController
   before_action :set_user
   before_action :set_recipe, only: %i[create]
   before_action :set_recipe_food, only: %i[edit update destroy show]
+  load_and_authorize_resource
 
   def index
     @recipe_foods = RecipeFood.all

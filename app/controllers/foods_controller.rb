@@ -1,21 +1,14 @@
-# app/controllers/foods_controller.rb:
-
 class FoodsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user
-  # before_action :set_food, only: [:new, :show, :create, :destroy]
+  load_and_authorize_resource
 
   def index
     @foods = @user.foods.includes(recipe_foods: :recipe) # fixed N+
-    #   @recipes_with_foods = @user.recipes.includes(recipe_foods: :foods)
   end
 
-  #   def show
-  #  @foods = @user.foods
-  #   end
 
   def new
-    # @food = @user.foods.find_by(params[:id])
     @food = @user.foods.build
   end
 
