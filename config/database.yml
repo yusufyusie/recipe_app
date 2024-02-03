@@ -91,7 +91,14 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
-  database: recipe_app_production
-  username: user
-  password: <%= ENV["RECIPE_APP_DATABASE_PASSWORD"] %>
+  host: dpg-cmv9njocmk4c73agk40g-a
+  port: 5432
+  database: recipe_app_mz6d
+  username: recipe_app_mz6d_user
+  password: J8EWtW1HaZ9hKhJm1OzSB3vAqWsJ5VD2
+  # internal database url: postgres://recipe_app_mz6d_user:J8EWtW1HaZ9hKhJm1OzSB3vAqWsJ5VD2@dpg-cmv9njocmk4c73agk40g-a/recipe_app_mz6d
+  # external database url: postgres://recipe_app_mz6d_user:J8EWtW1HaZ9hKhJm1OzSB3vAqWsJ5VD2@dpg-cmv9njocmk4c73agk40g-a.oregon-postgres.render.com/recipe_app_mz6d
+  # psql command: PGPASSWORD=J8EWtW1HaZ9hKhJm1OzSB3vAqWsJ5VD2 psql -h dpg-cmv9njocmk4c73agk40g-a.oregon-postgres.render.com -U recipe_app_mz6d_user recipe_app_mz6d
+
+
+

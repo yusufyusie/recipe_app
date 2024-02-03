@@ -11,7 +11,6 @@ gem 'jquery-rails'
 gem 'jsbundling-rails'
 gem 'sassc-rails'
 gem 'webpacker', '~> 5.0'
-
 gem 'rubocop', '>= 1.0', '< 2.0'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
@@ -21,7 +20,7 @@ gem 'rails', '~> 7.1.2'
 gem 'sprockets-rails'
 
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 1.1'
+gem 'pg', '~> 1.5', '>= 1.5.4'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '>= 5.0'
