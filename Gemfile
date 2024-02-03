@@ -12,7 +12,6 @@ gem 'jsbundling-rails'
 gem 'sassc-rails'
 gem 'webpacker', '~> 5.0'
 
-
 gem 'rubocop', '>= 1.0', '< 2.0'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
@@ -86,5 +85,4 @@ end
 
 gem 'fuubar'
 
-# Gemfile
 gem 'rails-controller-testing'
