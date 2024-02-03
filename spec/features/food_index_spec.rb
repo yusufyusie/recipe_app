@@ -15,7 +15,7 @@ RSpec.feature 'User Food List', type: :feature do
     expect(page).to have_selector('tbody tr td', text: 'Apple')
     expect(page).to have_selector('tbody tr td', text: 'kg')
     expect(page).to have_selector('tbody tr td', text: '$2.20')
-    expect(page).to have_link('Delete', href: user_food_path(@user, Food.first))
+    expect(page).to have_button('Delete')
   end
 
   private
