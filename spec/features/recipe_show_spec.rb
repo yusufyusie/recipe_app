@@ -73,13 +73,12 @@ RSpec.describe 'When I open recipe show page', type: :feature do
     end
   end
 
-  context 'When I click on Modify button' do
-    it 'redirects me to the edit recipe_food path' do
-      food = Food.create!(name: 'Tomato', price: 1, user: @user)
-      @recipe_food = RecipeFood.create!(recipe: @recipe, food:, quantity: 1)
-      visit(user_recipe_path(@user, @recipe))
-      click_link('Modify')
-      expect(page).to have_current_path(edit_user_recipe_recipe_food_path(@user, @recipe, @recipe_food))
+  context 'When I click on the public checkbox' do
+    it 'toggles the checkbox' do
+      find('.form-check-input').click
+      expect(find('.form-check-input')).to be_checked
+      find('.form-check-input').click
+      expect(find('.form-check-input')).not_to be_checked
     end
   end
 end
