@@ -1,123 +1,102 @@
-//   Shopping List
-  .container {
-    max-width: 960px;
-  }
+.container {
+  max-width: 960px;
+}
 
-  .table {
-    margin: auto;
-    width: 100% !important; 
-  }
+.table {
+  margin: auto;
+  width: 100% !important;
+}
 
-  .thead-light th {
-    color: #495057;
-    background-color: #e9ecef;
-    border-color: #dee2e6;
-  }
+.thead-light th {
+  color: #495057;
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
 
-  .table-bordered {
-    border: 1px solid #dee2e6;
-  }
+.table-bordered {
+  border: 1px solid #dee2e6;
+}
 
-  .table-hover tbody tr:hover {
-    color: #212529;
-    background-color: rgba(0,0,0,.075);
-  }
+.table-hover tbody tr:hover {
+  color: #212529;
+  background-color: rgba(0, 0, 0, 0.075);
+}
 
-// Ingredients table
-  #recipe_actions {
-    display: flex;
-    justify-content: center;
-    gap: 20%;
-    margin-right: 1rem;
-    padding: 0.25rem;
-    position: sticky;
-    top: 0;
-  }
+#recipe_actions {
+  display: flex;
+  justify-content: center;
+  gap: 20%;
+  margin-right: 1rem;
+  padding: 0.25rem;
+  position: sticky;
+  top: 0;
+}
 
-  .ingredient-info {
-    display: flex;
-    justify-content: center;
-    gap: 10%;;
-    flex-direction: row;
-    font-size: 1em;
-    color: #333;
-  }
+.ingredient-info {
+  display: flex;
+  justify-content: center;
+  gap: 10%;
+  flex-direction: row;
+  font-size: 1em;
+  color: #333;
+}
 
-  .recipe-details-card {
-    max-width: 960px;
-    margin: auto;
-  }
+.recipe-details-card {
+  max-width: 960px;
+  margin: auto;
+}
 
-  .table {
-    width: 100% !important; 
-  }
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
 
-  .thead-light th {
-    color: #495057;
-    background-color: #e9ecef;
-    border-color: #dee2e6;
-  }
+.button-cell {
+  width: 1%;
+  white-space: nowrap;
+}
 
-  .table-striped tbody tr:nth-of-type(odd) {
-    background-color: rgba(0,0,0,.05);
-  }
+.button-group {
+  display: flex;
+  justify-content: flex-end !important;
+  align-items: center;
+  width: auto !important;
+}
 
-  .table-hover tbody tr:hover {
-    color: #212529;
-    background-color: rgba(0,0,0,.075);
-  }
+.button-group form {
+  display: inline-block;
+  margin: 0;
+  align-items: end;
+}
 
-  .button-cell {
-    width: 1%; /* This will make the cell as small as possible, while still fitting its content */
-    white-space: nowrap; /* This will prevent the cell's content from wrapping to a new line */
-  }
+.remove-button {
+  width: 70px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
 
-  .button-group {
-    display: flex;
-    justify-content: flex-end !important; /* This will align the buttons to the end of the cell */
-    align-items: center;
-    width: auto !important; /* This will make the container only as wide as the content inside it */
-  }
-  
-  .button-group form {
-    display: inline-block;
-    margin: 0;
-    align-items: end;
-  }
+.new-ingredient-form {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+}
 
-  .remove-button {
-    width: 70px; /* Adjust this value as needed */
-    height: 30px; /* Adjust this value as needed */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-  }
+.new-ingredient-form-group {
+  margin-bottom: 15px;
+}
 
+.new-ingredient-form-control {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 
-// Recipes Ingredients form
-  .new-ingredient-form {
-    max-width: 500px;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f8f9fa;
-  }
-
-  .new-ingredient-form-group {
-    margin-bottom: 15px;
-  }
-
-  .new-ingredient-form-control {
-    width: 90%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-
-  .btn {
-    padding: 10px 20px;
-  }
-
-  
+.btn {
+  padding: 10px 20px;
+}
