@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'jsbundling-rails'
 gem 'sassc-rails'
 gem 'webpacker', '~> 5.0'
+gem 'cancancan'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 
