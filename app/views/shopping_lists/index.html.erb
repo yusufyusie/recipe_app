@@ -1,31 +1,29 @@
 <div class="container mt-5">
-  <h1 class="text-center">Your Shopping Lists</h1>
+   <h1 class="mt-4 mb-4 text-center">Shopping List</h1>
 <div class="ingredient-info text-center">
-  <h4>Amount of Food items to buy: <%= @ingredients.length %> </h4>
-  <h4>Total value of Food needed: <%= number_to_currency(@total_price) %> </h4>
+   <p>Amount of Food items to buy: <%= @ingredients.length %> </p>
+    <p>Total value of Food needed: <%= number_to_currency(@total_price) %> </p>
 </div>
   <div class="table-responsive">
-    <table class="table table-bordered table-hover">
-      <thead class="thead-light">
+  <table class="food-table">
+    <thead class="food-table-head">
         <tr>
-          <th scope="col">Food Name</th>
-          <th scope="col">Total Quantity Required</th>
-          <th scope="col">Missing Quantity</th>
-          <th scope="col">Price per Unit</th>
-          <th scope="col">Total Price</th>
+          <th>Food</th>
+          <th>Quantity</th>
+          <th>Price</th>
         </tr>
       </thead>
-      <tbody>
-        <% @ingredients.each do |food_name, ingredients| %>
-          <tr>
+       <tbody>
+      <% @ingredients.each do |food_name, ingredients| %>
+        <% ingredients.each do |ingredient| %>
+           <tr class="<%= cycle('food-odd-row', 'food-even-row') %>">
             <td><%= food_name %></td>
-            <td><%= ingredients.map(&:quantity).compact.sum %></td>
-            <td><%= @missing_numbers[food_name] %></td>
-            <td><%= ingredients.first.food.price %></td>
-            <td><%= ingredients.first.food.price * @missing_numbers[food_name] %></td>
+            <td><%= @missing_numbers[food_name] %> <%= ingredient.food.measurement_unit %> </td>
+            <td><%= number_to_currency(ingredient.food.price * @missing_numbers[food_name]) %></td>
           </tr>
         <% end %>
-      </tbody>
+      <% end %>
+    </tbody>
     </table>
   </div>
 

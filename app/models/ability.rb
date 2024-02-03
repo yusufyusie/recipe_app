@@ -4,8 +4,11 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    # Define abilities for the user here. For example:
-    can :manage, Food, user_id: user.id
+    can :public_recipes, Recipe
+    can :read, Recipe, public: true
+    return unless user.present?
+
+    can :manage, Recipe, user_id: user.id
     #
     #   return unless user.present?
     #   can :read, :all
