@@ -23,7 +23,6 @@ end
     end
   end
 
-  get 'recipes_foods', to: 'recipes#show'
   get 'foods', to: 'foods#index', as: :foods
   get 'public_recipes', to: 'recipes#public_recipes'
 end

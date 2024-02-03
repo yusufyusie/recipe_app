@@ -9,14 +9,18 @@ class RecipeFoodsController < ApplicationController
   end
 
   def new
+    @user = current_user
     @recipe_food = @user.recipe_foods.build
   end
 
   def create
+    @user = current_user
     @recipe_food = @user.recipe_foods.build(recipe_food_params)
+
     if @recipe_food.save
       redirect_to recipe_foods_path, notice: 'Recipe food added successfully.'
     else
+      flash.now[:alert] = 'Error: Recipe food could not be added.'
       render :new
     end
   end
@@ -50,5 +54,5 @@ class RecipeFoodsController < ApplicationController
 
   def recipe_food_params
     params.require(:recipe_food).permit(:quantity, :recipe_id, :food_id)
-  end
+  end  
 end

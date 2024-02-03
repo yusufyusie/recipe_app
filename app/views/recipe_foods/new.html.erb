@@ -1,6 +1,7 @@
+<!-- New Recipe Food Form -->
 <h1 class="text-center">Create a New Recipe Food</h1>
 
-<%= form_with(model: [@user, @recipe_food], url: new_recipe_foods_path(@user), local: true, html: { class: 'recipe-food-form' }) do |form| %>
+<%= form_with(model: [current_user, @recipe_food], url: user_recipe_recipe_foods_path(current_user), method: :post, local: true, html: { class: 'recipe-food-form' }) do |form| %>
   <div class="form-group">
     <%= form.label :quantity %>
     <%= form.number_field :quantity %>
@@ -19,4 +20,17 @@
   <div class="form-group">
     <%= form.submit "Create Recipe Food", class: 'btn btn-primary' %>
   </div>
+
+  <% if @recipe_food.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@recipe_food.errors.count, 'error') %> prohibited this recipe_food from being saved:</h2>
+      <ul>
+        <% @recipe_food.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
 <% end %>
+
